@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<!-- <link rel="stylesheet" href="style.css"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="Description" content="Advanced blocker for ads, distributions, popups. Cleans Internet. Improves reading experience! Popup off? PopUpOFF!">
 	<link rel="shortcut icon" type="image/png" href="logo32.png"/>
@@ -10,187 +9,183 @@
 </head>
 <body>
 	<style>
-		body,html{position:relative;overflow:hidden;width:100%;background-color:#000;background-color:#222831;color:#ccc;color:#f9ffee;padding:0;margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;line-height:1.59;font-weight:300;font-size:18px}h1,h2,h3,h4,p{margin:0}a{display:block;color:#ccc;color:#f9ffee;text-decoration:none;transition:all ease .4s}a:hover{color:#efbb35}li,ul{margin:0;padding:0;list-style:none}.in_text_link{display:inline-block;text-decoration:underline}.logo{position:fixed;right:40px;bottom:40px;width:200px}.logo__img{width:100%}.logo g>g path{transition:all ease .6s}.logo:hover g>g path{fill:#efbb35}.logo:hover g>g:nth-child(3) path{fill:#f9ffee}.top{text-align:center;position:relative}.top__bold{font-size:130px;font-weight:700;color:#efbb35;text-transform:uppercase;display:inline-block;padding:0 40px;transition:all ease 1.4s;position:relative}.top-interactive_1.hide,.top-interactive_1:hover,.top-interactive_2.hide,.top-interactive_2:hover{color:brown}.top__text{font-size:30px;color:#efbb35;padding-bottom:50px;transition:all ease 1.5s 1.8s}.top__text::selection,.in_text_link::selection{color:brown}.show.top__text{transform:translateY(-90px) scale(2.5,2.5);position:relative;z-index:3}.hide.top-interactive_1{opacity:0}.top-interactive_1::selection,.top-interactive_2::selection,br::selection,.in_text_link::selection{background-color:#333}.top-interactive_2{opacity:0;position:absolute;padding:40px 0;left:50%;transition:opacity ease 1.5s 1s,color ease 1.4s;transform:translateX(-50%);font-size:80px;color:#efbb35}.show.top-interactive_2{opacity:1;z-index:2}.hide.top-interactive_2{opacity:0;z-index:1;cursor:auto}.middle{position:relative;display:flex;flex-wrap:wrap;justify-content:center;align-items:center}.middle__item{width:100%;max-height:40px;overflow:hidden;text-align:center;transition:all ease 1.5s}.middle__item.opened{max-height:500px;max-height:520px}.middle__link{font-size:24px;transition:all ease 1.5s}.middle__close::selection,.middle__link::selection{color:brown}.middle__link.clicked{margin-bottom:40px}.middle__item:not(.opened) .middle__wrap{height:0!important}.middle__wrap{height:0;overflow:hidden;opacity:0;transition:all ease 1.5s}.opened .middle__wrap{opacity:1}.condition .middle__item:not(.opened){max-height:0;opacity:0}.middle__close{opacity:0;transition:opacity ease .5s .5s,color ease 1s}.opened .middle__close{opacity:1;color:#efbb35}.opened .middle__close:hover{color:#f9ffee}.middle__close-pad_top{margin-top:30px}.cont_wr{display:flex;justify-content:space-around;flex-wrap:wrap}.cont_wr__image{width:100%;display:block}.cont_wr__item{width:100%}.cont_wr__img_item{width:25%;transition:transform ease 1s}.cont_wr__img_item:hover{transform:scale(1.2,1.2)}.cont_wr__item p{width:47%;margin:0 auto 20px}.cont_wr__item p::selection{color:#efbb35;background-color:#222}.popUp__wrap{position:fixed;width:100%;max-width:80%;height:100%;max-height:80%;left:10%;right:10%;top:10%;bottom:10%;transform:translateX(130%);transition:all ease 1s}.show .popUp__wrap{transform:none}.hide .popUp__wrap{transform:translateX(130%)}.popUp{position:fixed;z-index:-1;opacity:0;left:0;right:0;top:0;bottom:0;background-color:rgba(0,0,0,.8)}.show.popUp{opacity:1;z-index:4;transition:opacity ease .4s}.hide.popUp{opacity:0;transition:opacity ease .4s .6s}.popUp__img{height:100%;width:100%;object-fit:contain}.popUp__close{position:fixed;width:40px;height:40px;top:40px;right:40px;top:5%;transform:translateY(-50%)}.outer{position:relative;margin:auto;width:40px;cursor:pointer;height:100%}.inner{width:inherit;text-align:center;height:100%}.close_label{font-size:.8em;line-height:2.7em;text-transform:uppercase;color:#fff;transition:all .3s ease-in;opacity:0;cursor:pointer}.inner:after,.inner:before{position:absolute;content:'';height:1px;width:inherit;background:#efbb35;left:0;transition:all .3s ease-in}.inner:before{top:50%;transform:rotate(45deg)}.inner:after{bottom:50%;transform:rotate(-45deg)}.outer:hover .close_label{opacity:1}.outer:hover .inner:after,.outer:hover .inner:before{transform:rotate(0)}.outer:hover .inner:before{top:0}.outer:hover .inner:after{bottom:0}.popUp__text{position:fixed;display:flex;justify-content:center;align-items:center;text-align:center;top:0;left:10%;right:10%;bottom:90%;font-size:26px;opacity:0}.close_label::selection{color:brown}.cont_wr__image::selection{background-color:#333}.popUp__img::selection,.popUp__text::selection{background-color:brown}.show .popUp__text{opacity:1;transition:all ease .5s .5s}.hide .popUp__text{opacity:0;transition:all ease .5s .2s}.popUp__prev{position:fixed;display:flex;justify-content:center;align-items:center;bottom:0;left:10%;right:10%;top:90%;font-size:30px;font-weight:400}@media screen and (max-width:1601px){.top__text{padding-bottom:20px}.middle__link.clicked{margin-bottom:20px}}@media screen and (max-width:1439px){.top__bold{font-size:90px}.top-interactive_2{font-size:60px;padding:25px 0}.show.top__text{transform:translateY(-84px) scale(2,2)}.middle__link{font-size:20px}.middle__item{max-height:36px}.middle__close-pad_top{margin-top:20px}.cont_wr__item p{margin-bottom:14px;font-size:16px}.popUp__text{font-size:20px}}.mobile{display:none}@media screen and (max-width:1024px){.mobile{display:-webkit-flex;display:-moz-flex;display:-ms-flex;display:-o-flex;display:flex;justify-content:center;text-align:center;-ms-align-items:center;align-items:center;width:100vw;height:100vh;padding:0 40px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;font-size:6vw;color:#efbb35}.middle,.top{display:none}}
+		body,html{position:relative;overflow:hidden;width:100%;height:100%;background-color:#000;background-color:#222831;color:#ccc;color:#f9ffee;padding:0;margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;line-height:1.59;font-weight:300;font-size:18px}h1,h2,h3,h4,p{margin:0}a{display:block;color:#ccc;color:#f9ffee;text-decoration:none;transition:all ease .4s}a:hover{color:#efbb35}li,ul{margin:0;padding:0;list-style:none}.in_text_link{display:inline;text-decoration:underline;text-decoration-color:#efbb35}.logo{position:absolute;right:40px;bottom:40px;width:200px}.logo__img{width:100%}.logo g>g path{transition:all ease .6s}.logo:hover g>g path{fill:#efbb35}.logo:hover g>g:nth-child(3) path{fill:#f9ffee}.top{text-align:center;position:relative}.top__bold{font-size:130px;font-weight:700;color:#efbb35;text-transform:uppercase;display:inline-block;padding:0 40px;transition:all ease 1.4s;position:relative}.top-interactive_1.hide,.top-interactive_1:hover,.top-interactive_2.hide,.top-interactive_2:hover{color:brown}.top__text{font-size:30px;color:#efbb35;padding-bottom:50px;transition:all ease 1.5s 1.8s}.in_text_link::selection,.top__text::selection{color:brown}.show.top__text{transform:translateY(-90px) scale(2.5,2.5);position:relative;z-index:3}.hide.top-interactive_1{opacity:0}.in_text_link::selection,.top-interactive_1::selection,.top-interactive_2::selection,br::selection{background-color:#333}.top-interactive_2{opacity:0;position:absolute;padding:40px 0;left:50%;transition:opacity ease 1.5s 1s,color ease 1.4s;transform:translateX(-50%);font-size:80px;color:#efbb35}.show.top-interactive_2{opacity:1;z-index:2}.hide.top-interactive_2{opacity:0;z-index:1;cursor:auto}.middle{position:relative;display:flex;flex-wrap:wrap;justify-content:center;align-items:center}.middle__item{width:100%;max-height:40px;overflow:hidden;text-align:center;transition:all ease 1.5s}.middle__item.opened{max-height:550px}.middle__link{font-size:24px;transition:all ease 1.5s}.middle__close::selection,.middle__link::selection{color:brown}.middle__link.clicked{margin-bottom:40px}.middle__item:not(.opened) .middle__wrap{height:0!important}.middle__wrap{height:0;overflow:hidden;opacity:0;transition:all ease 1.5s}.opened .middle__wrap{opacity:1}.condition .middle__item:not(.opened){max-height:0;opacity:0}.middle__close{opacity:0;transition:opacity ease .5s .5s,color ease 1s}.opened .middle__close{opacity:1;color:#efbb35}.opened .middle__close:hover{color:#f9ffee}.middle__close-pad_top{margin-top:30px}.cont_wr{display:flex;justify-content:space-around;flex-wrap:wrap}.cont_wr__image{width:100%;display:block}.cont_wr__item{width:100%}.cont_wr__img_item{width:25%;transition:transform ease 1s;display:block}.cont_wr__img_item:hover{transform:scale(1.2,1.2)}.cont_wr__item p{width:47%;margin:0 auto 20px}.cont_wr__item p::selection{color:#efbb35;background-color:#222}.popUp__wrap{position:absolute;width:100%;max-width:80%;height:100%;max-height:80%;left:10%;right:10%;top:10%;bottom:10%;transform:translateX(130%);transition:all ease 1s}.show .popUp__wrap{transform:none}.hide .popUp__wrap{transform:translateX(130%)}.popUp{position:absolute;z-index:-1;opacity:0;left:0;right:0;top:0;bottom:0;background-color:rgba(0,0,0,.8)}.show.popUp{opacity:1;z-index:4;transition:opacity ease .4s}.hide.popUp{opacity:0;transition:opacity ease .4s .6s}.popUp__img{height:100%;width:100%;object-fit:contain}.popUp__close{position:absolute;width:40px;height:40px;top:40px;right:40px;top:5%;transform:translateY(-50%)}.outer{position:relative;margin:auto;width:40px;cursor:pointer;height:100%}.inner{width:inherit;text-align:center;height:100%}.close_label{font-size:.8em;line-height:2.7em;text-transform:uppercase;color:#fff;transition:all .3s ease-in;opacity:0;cursor:pointer}.inner:after,.inner:before{position:absolute;content:'';height:1px;width:inherit;background:#efbb35;left:0;transition:all .3s ease-in}.inner:before{top:50%;transform:rotate(45deg)}.inner:after{bottom:50%;transform:rotate(-45deg)}.outer:hover .close_label{opacity:1}.outer:hover .inner:after,.outer:hover .inner:before{transform:rotate(0)}.outer:hover .inner:before{top:0}.outer:hover .inner:after{bottom:0}.popUp__text{position:absolute;display:flex;justify-content:center;align-items:center;text-align:center;top:0;left:10%;right:10%;bottom:90%;font-size:26px;opacity:0}.close_label::selection{color:brown}.cont_wr__image::selection{background-color:#333}.popUp__img::selection,.popUp__text::selection{background-color:brown}.show .popUp__text{opacity:1;transition:all ease .5s .5s}.hide .popUp__text{opacity:0;transition:all ease .5s .2s}@media screen and (max-width:1601px){.top__text{padding-bottom:20px}.middle__link.clicked{margin-bottom:20px}}@media screen and (max-width:1439px){.top__bold{font-size:90px}.top-interactive_2{font-size:60px;padding:25px 0}.show.top__text{transform:translateY(-84px) scale(2,2)}.middle__link{font-size:20px}.middle__item{max-height:36px}.middle__close-pad_top{margin-top:20px}.cont_wr__item p{margin-bottom:14px;font-size:16px}.popUp__text{font-size:20px}}.mobile{display:none}@media screen and (max-width:1024px){.mobile{display:-webkit-flex;display:-moz-flex;display:-ms-flex;display:-o-flex;display:flex;justify-content:center;text-align:center;-ms-align-items:center;align-items:center;width:100vw;height:100vh;padding:0 40px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;font-size:6vw;color:#efbb35}.middle,.top{display:none}}
 	</style>
 	<header class="top">
 		<a href="#" class="top__title top-interactive_2">Glad you are here!</a>
 		<a href="#" class="top__bold top-interactive_1">hello</a>
 		<p class="top__text">Be guest of mine</p>
 	</header>
-	<ul class="middle">
-<!-- 		<li class="middle__item">
-			<a class="middle__link" href="#">Trailer</a>
-			<div class="middle__wrap cont_wr">
-				<iframe width="560" height="315" src="https://www.youtube.com/embed/txBfhpm1jI0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-			</div>
-			<a href="#" class="middle__close middle__close-pad_top">Got it!</a>
-		</li> -->
-		<li class="middle__item">
-			<a class="middle__link" id="whyThis" href="#">Why this extension?</a>
-			<ul class="middle__wrap cont_wr middle__img_wr">
-				<li class="cont_wr__item cont_wr__img_item">
-					<a class="imgClick" href="#">
-						<img data-desc="This is how typical site I visit looks like. This screen we use clean chrome without any extensions." class="cont_wr__image" src="images/3.jpg" alt="image example">
-					</a>
-				</li>
-				<li class="cont_wr__item cont_wr__img_item">
-					<a class="imgClick" href="#">
-						<img data-desc="This is how typical site I visit looks like. This screen we use all extensions I could find for blocking ads and popups." class="cont_wr__image" src="images/4.jpg" alt="image example">
-					</a>
-				</li>
-				<li class="cont_wr__item cont_wr__img_item">
-					<a class="imgClick" href="#">
-						<img data-desc="This is how typical site I visit looks like. This screen we use PopUpOFF. Help comforting yourself!" class="cont_wr__image" src="images/5.jpg" alt="image example">
-					</a>
-				</li>
-			</ul>
-			<a href="#" class="middle__close middle__close-pad_top">Got it!</a>
-		</li>
-		<li class="middle__item">
-			<a class="middle__link" id="howToUseIt" href="#">How to use it??</a>
-			<ul class="middle__wrap cont_wr">
-				<li class="cont_wr__item">
-					<p>Lets assume you already installed it. <br> There are three modes you can use:</p>
-				</li>
-				<li class="cont_wr__item">
-					<p>"Hard mode" and "Easy mode". They both blocking popups that interfere with your reading experience. Easy mode leaves header/navigation bar on page, so u can change topic. Hard mode does not. There are plenty of websites that deserve it.</p>
-				</li>
-				<li class="cont_wr__item">
-					<p>These modes are available for all pages on current website or for every page you visit while given mode is active. They are "this site" or "everywhere".</p>
-				</li>
-				<li class="cont_wr__item">
-					<p>Last mode is "I JUST WANT TO READ!" - It disables all things that can interrupt you from reading. Works for current page until u reload it or leave in any way.</p>
-				</li>
-			</ul>
-			<a href="#" class="middle__close">Got it!</a>
-		</li>
-		<li class="middle__item">
-			<a class="middle__link" if="whoAmI" href="#">Who am I???</a>
-			<ul class="middle__wrap cont_wr">
-				<li class="cont_wr__item">
-					<p>I am Romanist - independent developer who built this plugin for myself.</p>
-				</li>
-				<li class="cont_wr__item">
-					<p>Every day I face great number of websites that trying to impose different things for me. It could be ads, distributions, courses. Anything. Now I am oficially tired of it. If you are as well, welcome.</p>
-				</li>
-				<li class="cont_wr__item">
-					<p>I havent found any extension that could help me here. So algorithm was easy. Face problem -> check is there existing solution -> if no, check if you able to resolve it -> if yes, do it. So did I.</p>
-				</li>
-				<li class="cont_wr__item">
-					<p>I cooperate with noone. To be honest I collect some stats. Not sites u visit, just what features are used more and what are less to understand better what ones are needed. You can help me more by sending your feedback to <a class="in_text_link" href="mailto:RomanistHere@gmail.com">email</a></p>
-				</li>
-				<li class="cont_wr__item">
-					<p>So feel free to use it!</p>
-				</li>
-			</ul>
-			<a href="#" class="middle__close">Got it!</a>
-		</li>
-		<li class="middle__item">
-			<a class="middle__link" id="consAndPros" href="#">Cons and pros</a>
-			<ul class="middle__wrap cont_wr">
-				<li class="cont_wr__item">
-					<p>Ultra-lightweight. Ultra-simple. <a class="in_text_link" target="_blank" href="https://github.com/RomanistHere/PopUpOFF">Open source</a>. Does things another tools do not.</p>
-				</li>
-				<li class="cont_wr__item">
-					<p>Can break a few websites down if you use it in "everywhere" mode, what I do not recommend. Part of sites use same mechanics as popups do . However, nothing serious can happen. Turn it off for this website, reload page, <a class="in_text_link" href="mailto:RomanistHere@gmail.com">send me website</a>. We will fix it up!</p>
-				</li>
-				<li class="cont_wr__item">
-					<p>PopUpOFF does not block content ad. Use it in pair with any adblocker</p>
-				</li>
-				<li class="cont_wr__item">
-					<p>Addictive. Literally. After you use it there will be no way back. While PopUpOFF was not released, I had to use another computer without it installed there. It was worst few hours of internet experience in my life. I had to close these annoying inifinite bars and popups, ugh...</p>
-				</li>
-			</ul>
-			<a href="#" class="middle__close">Got it!</a>
-		</li>
-		<li class="middle__item">
-			<a class="middle__link" id="feedback" href="#">Feedback and support</a>
-			<ul class="middle__wrap cont_wr">
-				<li class="cont_wr__item">
-					<p>So if u have wishes and suggestions or just want to thank me, write me down it here: <a class="in_text_link" href="mailto:RomanistHere@gmail.com">RomanistHere@gmail.com</a></p>
-				</li>
-				<li class="cont_wr__item">
-					<p>You could also make further development possible and faster by sending me what you think my work worth is: WM Z167685930722, <a class="in_text_link" target="_blank" href="https://money.yandex.ru/to/410019187512228">YM</a>  410019187512228</p>
-				</li>
-				<li class="cont_wr__item">
-					<p>Important thing! I could not test plugin everywhere, so if you think you found website where it has to work but it isn't, please, write right to <a class="in_text_link" href="mailto:RomanistHere@gmail.com">me</a> - it will help a lot</p>
-				</li>
-			</ul>
-			<a href="#" class="middle__close">Got it!</a>
-		</li>
-		<li class="middle__item">
-			<a class="middle__link" id="future" href="#">Future features</a>
-			<ul class="middle__wrap cont_wr">
-				<li class="cont_wr__item">
-					<p>Creating data base of websites where users turn plugin on. So when u first time visit it plugin will automaticly turn on.</p>
-				</li>
-				<li class="cont_wr__item">
-					<p>Managing by key combination.</p>
-				</li>
-				<li class="cont_wr__item">
-					<p>
-						<a class="in_text_link" target="_blank" href="https://chrome.google.com/webstore/detail/stylify-unuglify/knnnacgjjmlljheglipemamhdlckpfjc">Read mode. Not only remove all blocking-view elements but improve your reading experience.</a>
-					<p>
-				</li>
-				<li class="cont_wr__item">
-					<p>Improving perfomance.</p>
-				</li>
-				<li class="cont_wr__item">
-					<p>Providing to another platforms like Firefox.</p>
-				</li>
-			</ul>
-			<a href="#" class="middle__close">Got it!</a>
-		</li>
-	</ul>
-	<a href="https://chrome.google.com/webstore/detail/popupoff-popup-blocker/ifnkdbpmgkdbfklnbfidaackdenlmhgh" target="_blank" class="logo">
-		<!-- <img class="logo__img" src="images/logo.svg" alt=""> -->
-		<svg version="1.2" class="logo__img" baseProfile="tiny" id="Слой_1"
-			 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 167 83"
-			 xml:space="preserve">
-		<g>
-			<rect fill="#222831" width="167" height="83"/>
+	<main>
+		<ul class="middle">
+			<li class="middle__item">
+				<a class="middle__link" id="whyThis" href="#">Why this extension?</a>
+				<ul class="middle__wrap cont_wr middle__img_wr">
+					<li class="cont_wr__item cont_wr__img_item">
+						<a class="imgClick" href="#">
+							<img data-desc="This is how typical site I visit looks like. This screen we use clean chrome without any extensions." class="cont_wr__image" src="images/3.jpg" alt="image example">
+						</a>
+					</li>
+					<li class="cont_wr__item cont_wr__img_item">
+						<a class="imgClick" href="#">
+							<img data-desc="This is how typical site I visit looks like. This screen we use all extensions I could find for blocking ads and popups." class="cont_wr__image" src="images/4.jpg" alt="image example">
+						</a>
+					</li>
+					<li class="cont_wr__item cont_wr__img_item">
+						<a class="imgClick" href="#">
+							<img data-desc="This is how typical site I visit looks like. This screen we use PopUpOFF. Help comforting yourself!" class="cont_wr__image" src="images/5.jpg" alt="image example">
+						</a>
+					</li>
+				</ul>
+				<a href="#" class="middle__close middle__close-pad_top">Got it!</a>
+			</li>
+			<li class="middle__item">
+				<a class="middle__link" id="howToUseIt" href="#">How to use it??</a>
+				<ul class="middle__wrap cont_wr">
+					<li class="cont_wr__item">
+						<p>Lets assume you already installed it. <br> There are three modes you can use:</p>
+					</li>
+					<li class="cont_wr__item">
+						<p>"Hard mode" and "Easy mode". They both blocking popups that interfere with your reading experience. Easy mode leaves header/navigation bar on page, so u can change topic. Hard mode does not. There are plenty of websites that deserve it.</p>
+					</li>
+					<li class="cont_wr__item">
+						<p>These modes are available for all pages on current website or for every page you visit while given mode is active. They are "this site" or "everywhere".</p>
+					</li>
+					<li class="cont_wr__item">
+						<p>Last mode is "I JUST WANT TO READ!" - It disables all things that can interrupt you from reading. Works for current page until u reload it or leave in any way.</p>
+					</li>
+				</ul>
+				<a href="#" class="middle__close">Got it!</a>
+			</li>
+			<li class="middle__item">
+				<a class="middle__link" if="whoAmI" href="#">Who am I???</a>
+				<ul class="middle__wrap cont_wr">
+					<li class="cont_wr__item">
+						<p>I am Romanist - independent developer who built this extension for myself.</p>
+					</li>
+					<li class="cont_wr__item">
+						<p>Every day I face great number of websites that trying to impose different things for me. It could be ads, distributions, courses. Anything. Now I am oficially tired of it. If you are as well, welcome.</p>
+					</li>
+					<li class="cont_wr__item">
+						<p>I havent found any extension that could help me here. So algorithm was easy. Face problem -> check is there existing solution -> if no, check if you able to resolve it -> if yes, do it. So did I.</p>
+					</li>
+					<li class="cont_wr__item">
+						<p>I cooperate with noone. To be honest I collect some stats. Not sites u visit, just what features are used more and what are less to understand better what ones are needed. You can help me more by sending your feedback to <a class="in_text_link" href="mailto:RomanistHere@gmail.com">email</a></p>
+					</li>
+					<li class="cont_wr__item">
+						<p>So feel free to use it!</p>
+					</li>
+				</ul>
+				<a href="#" class="middle__close">Got it!</a>
+			</li>
+			<li class="middle__item">
+				<a class="middle__link" id="consAndPros" href="#">Cons and pros</a>
+				<ul class="middle__wrap cont_wr">
+					<li class="cont_wr__item">
+						<p>Ultra-lightweight. Ultra-simple. <a class="in_text_link" target="_blank" href="https://github.com/RomanistHere/PopUpOFF">Open source</a>. Does things another tools do not.</p>
+					</li>
+					<li class="cont_wr__item">
+						<p>Can break a few websites down if you use it in "everywhere" mode, what I do not recommend. Part of sites use same mechanics as popups do . However, nothing serious can happen. Turn it off for this website, reload page, <a class="in_text_link" href="mailto:RomanistHere@gmail.com">send me website</a>. We will fix it up!</p>
+					</li>
+					<li class="cont_wr__item">
+						<p>PopUpOFF does not block content ad. Use it in pair with any adblocker</p>
+					</li>
+					<li class="cont_wr__item">
+						<p>Addictive. Literally. After you use it there will be no way back. While PopUpOFF was not released, I had to use another computer without it installed there. It was worst few hours of internet experience in my life. I had to close these annoying inifinite bars and popups, ugh...</p>
+					</li>
+				</ul>
+				<a href="#" class="middle__close">Got it!</a>
+			</li>
+			<li class="middle__item">
+				<a class="middle__link" id="feedback" href="#">Feedback and support</a>
+				<ul class="middle__wrap cont_wr">
+					<li class="cont_wr__item">
+						<p>So if u have wishes and suggestions or just want to thank me, write me down it here: <a class="in_text_link" href="mailto:RomanistHere@gmail.com">RomanistHere@gmail.com</a></p>
+					</li>
+					<li class="cont_wr__item">
+						<p>You could also make further development possible and faster by sending me what you think my work worth is: WM Z167685930722, <a class="in_text_link" target="_blank" href="https://money.yandex.ru/to/410019187512228">YM</a>  410019187512228</p>
+					</li>
+					<li class="cont_wr__item">
+						<p>Important thing! I could not test PopUpOFF everywhere, so if you think you found website where it has to work but it isn't, please, write right to <a class="in_text_link" href="mailto:RomanistHere@gmail.com">me</a> - it will help a lot</p>
+					</li>
+				</ul>
+				<a href="#" class="middle__close">Got it!</a>
+			</li>
+			<li class="middle__item">
+				<a class="middle__link" id="future" href="#">Future features</a>
+				<ul class="middle__wrap cont_wr">
+					<li class="cont_wr__item">
+						<p>Creating data base of websites where users turn extension on. So when u first time visit it PopUpOFF will automaticly turn on.</p>
+					</li>
+					<li class="cont_wr__item">
+						<p>Managing by key combination.</p>
+					</li>
+					<li class="cont_wr__item">
+						<p>
+							<a class="in_text_link" target="_blank" href="https://chrome.google.com/webstore/detail/stylify-unuglify/knnnacgjjmlljheglipemamhdlckpfjc">Read mode. Not only remove all blocking-view elements but improve your reading experience.</a>
+						<p>
+					</li>
+					<li class="cont_wr__item">
+						<p>Translating into another languages.</p>
+					</li>
+					<li class="cont_wr__item">
+						<p>Providing to another platforms like Firefox.</p>
+					</li>
+				</ul>
+				<a href="#" class="middle__close">Got it!</a>
+			</li>
+		</ul>
+	</main>
+	<footer>
+		<a href="https://chrome.google.com/webstore/detail/popupoff-popup-blocker/ifnkdbpmgkdbfklnbfidaackdenlmhgh" target="_blank" class="logo">
+			<svg version="1.2" class="logo__img" baseProfile="tiny" id="Слой_1"
+				 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 167 83"
+				 xml:space="preserve">
 			<g>
-				<path fill="#F9FFEE" d="M30.6,26.8c0.1,0.1,0.1,0.1,0.1,0.2v14.8c0,0.1,0,0.1-0.1,0.2c0,0-0.1,0.1-0.1,0.1l-8.6,2v13.4l0.5,0.3
-					c0,0,0.1,0.1,0.1,0.1c0,0,0,0.1,0,0.1V58l-0.4,1.4c0,0.1-0.1,0.1-0.1,0.2c0,0-0.1,0.1-0.1,0.1h-5.7c0,0-0.1,0-0.2-0.1
-					c-0.1,0-0.1-0.1-0.1-0.2L15.7,58v-0.1c0,0,0-0.1,0-0.1s0.1-0.1,0.1-0.1l0.5-0.3V26.2l-0.5-0.3l-0.1-0.1v-0.2l0.4-1.4
-					c0-0.1,0-0.1,0.1-0.2c0.1,0,0.1-0.1,0.2-0.1h11.3c0.1,0,0.1,0,0.2,0.1L30.6,26.8z M21.9,29.4v8.9l3.3-0.6v-8.3H21.9z"/>
-				<path fill="#F9FFEE" d="M47.3,31.1c0,0,0.1,0.1,0.1,0.2v25.3c0,0.1,0,0.1-0.1,0.2l-2.8,2.8c0,0-0.1,0.1-0.2,0.1h-9.1
-					c-0.1,0-0.2,0-0.2-0.1l-2.8-2.8c0,0-0.1-0.1-0.1-0.2V31.3c0-0.1,0-0.1,0.1-0.2l2.8-2.8c0-0.1,0.1-0.1,0.2-0.1h9.1
-					c0.1,0,0.2,0,0.2,0.1L47.3,31.1z M37.5,33.7v20.5h4.4V33.7H37.5z"/>
-				<path fill="#F9FFEE" d="M63.5,31c0,0.1,0.1,0.1,0.1,0.2V45c0,0,0,0.1-0.1,0.1s-0.1,0.1-0.2,0.1l-8.6,2v10.2l0.5,0.3
-					c0.1,0,0.1,0.1,0.1,0.1l0,0.1l0,0.1l-0.3,1.4c0,0-0.1,0.1-0.1,0.1c0,0-0.1,0.1-0.2,0.1h-5.6c-0.1,0-0.1,0-0.2-0.1
-					c0,0-0.1-0.1-0.1-0.1L48.6,58c0-0.1,0-0.1,0-0.2c0-0.1,0.1-0.1,0.1-0.1l0.6-0.3V30.4l-0.6-0.3c0,0-0.1-0.1-0.1-0.2s0-0.1,0-0.2
-					l0.4-1.4c0-0.1,0.1-0.1,0.1-0.2c0,0,0.1-0.1,0.2-0.1h11.2c0.1,0,0.1,0,0.2,0.1L63.5,31z M58.1,40.9v-7.2h-3.3v7.9L58.1,40.9z"/>
-				<path fill="#F9FFEE" d="M81.5,25.9l-0.5,0.3v30.4c0,0.1,0,0.1-0.1,0.2l-2.8,2.8c-0.1,0-0.1,0.1-0.2,0.1h-9.1c-0.1,0-0.1,0-0.2-0.1
-					l-2.8-2.8c-0.1,0-0.1-0.1-0.1-0.2V26.2l-0.5-0.3c0,0-0.1-0.1-0.1-0.1c0,0,0-0.1,0-0.1v0l0.4-1.4c0-0.1,0.1-0.1,0.1-0.2
-					c0,0,0.1-0.1,0.1-0.1h5.7c0,0,0.1,0,0.2,0.1c0.1,0,0.1,0.1,0.1,0.2l0.4,1.4l0,0.1l0,0.1l-0.1,0.1l-0.5,0.3v28h4.4v-28l-0.5-0.3
-					c-0.1,0-0.1-0.1-0.1-0.1c0,0,0-0.1,0-0.1v-0.1l0.3-1.4c0-0.1,0.1-0.1,0.1-0.2c0,0,0.1-0.1,0.2-0.1H81c0.1,0,0.1,0,0.2,0.1
-					c0,0,0.1,0.1,0.1,0.2l0.3,1.4l0,0.1l0,0.1C81.6,25.8,81.5,25.9,81.5,25.9z"/>
-				<path fill="#F9FFEE" d="M97.9,31c0,0.1,0.1,0.1,0.1,0.2V45c0,0,0,0.1-0.1,0.1s-0.1,0.1-0.2,0.1l-8.6,2v10.2l0.5,0.3
-					c0.1,0,0.1,0.1,0.1,0.1l0,0.1l0,0.1l-0.3,1.4c0,0-0.1,0.1-0.1,0.1c0,0-0.1,0.1-0.2,0.1h-5.6c-0.1,0-0.1,0-0.2-0.1
-					c0,0-0.1-0.1-0.1-0.1L82.9,58c0-0.1,0-0.1,0-0.2c0-0.1,0.1-0.1,0.1-0.1l0.6-0.3V30.4l-0.6-0.3c0,0-0.1-0.1-0.1-0.2s0-0.1,0-0.2
-					l0.4-1.4c0-0.1,0.1-0.1,0.1-0.2c0,0,0.1-0.1,0.2-0.1h11.2c0.1,0,0.1,0,0.2,0.1L97.9,31z M92.5,40.9v-7.2h-3.3v7.9L92.5,40.9z"/>
+				<rect fill="#222831" width="167" height="83"/>
+				<g>
+					<path fill="#F9FFEE" d="M30.6,26.8c0.1,0.1,0.1,0.1,0.1,0.2v14.8c0,0.1,0,0.1-0.1,0.2c0,0-0.1,0.1-0.1,0.1l-8.6,2v13.4l0.5,0.3
+						c0,0,0.1,0.1,0.1,0.1c0,0,0,0.1,0,0.1V58l-0.4,1.4c0,0.1-0.1,0.1-0.1,0.2c0,0-0.1,0.1-0.1,0.1h-5.7c0,0-0.1,0-0.2-0.1
+						c-0.1,0-0.1-0.1-0.1-0.2L15.7,58v-0.1c0,0,0-0.1,0-0.1s0.1-0.1,0.1-0.1l0.5-0.3V26.2l-0.5-0.3l-0.1-0.1v-0.2l0.4-1.4
+						c0-0.1,0-0.1,0.1-0.2c0.1,0,0.1-0.1,0.2-0.1h11.3c0.1,0,0.1,0,0.2,0.1L30.6,26.8z M21.9,29.4v8.9l3.3-0.6v-8.3H21.9z"/>
+					<path fill="#F9FFEE" d="M47.3,31.1c0,0,0.1,0.1,0.1,0.2v25.3c0,0.1,0,0.1-0.1,0.2l-2.8,2.8c0,0-0.1,0.1-0.2,0.1h-9.1
+						c-0.1,0-0.2,0-0.2-0.1l-2.8-2.8c0,0-0.1-0.1-0.1-0.2V31.3c0-0.1,0-0.1,0.1-0.2l2.8-2.8c0-0.1,0.1-0.1,0.2-0.1h9.1
+						c0.1,0,0.2,0,0.2,0.1L47.3,31.1z M37.5,33.7v20.5h4.4V33.7H37.5z"/>
+					<path fill="#F9FFEE" d="M63.5,31c0,0.1,0.1,0.1,0.1,0.2V45c0,0,0,0.1-0.1,0.1s-0.1,0.1-0.2,0.1l-8.6,2v10.2l0.5,0.3
+						c0.1,0,0.1,0.1,0.1,0.1l0,0.1l0,0.1l-0.3,1.4c0,0-0.1,0.1-0.1,0.1c0,0-0.1,0.1-0.2,0.1h-5.6c-0.1,0-0.1,0-0.2-0.1
+						c0,0-0.1-0.1-0.1-0.1L48.6,58c0-0.1,0-0.1,0-0.2c0-0.1,0.1-0.1,0.1-0.1l0.6-0.3V30.4l-0.6-0.3c0,0-0.1-0.1-0.1-0.2s0-0.1,0-0.2
+						l0.4-1.4c0-0.1,0.1-0.1,0.1-0.2c0,0,0.1-0.1,0.2-0.1h11.2c0.1,0,0.1,0,0.2,0.1L63.5,31z M58.1,40.9v-7.2h-3.3v7.9L58.1,40.9z"/>
+					<path fill="#F9FFEE" d="M81.5,25.9l-0.5,0.3v30.4c0,0.1,0,0.1-0.1,0.2l-2.8,2.8c-0.1,0-0.1,0.1-0.2,0.1h-9.1c-0.1,0-0.1,0-0.2-0.1
+						l-2.8-2.8c-0.1,0-0.1-0.1-0.1-0.2V26.2l-0.5-0.3c0,0-0.1-0.1-0.1-0.1c0,0,0-0.1,0-0.1v0l0.4-1.4c0-0.1,0.1-0.1,0.1-0.2
+						c0,0,0.1-0.1,0.1-0.1h5.7c0,0,0.1,0,0.2,0.1c0.1,0,0.1,0.1,0.1,0.2l0.4,1.4l0,0.1l0,0.1l-0.1,0.1l-0.5,0.3v28h4.4v-28l-0.5-0.3
+						c-0.1,0-0.1-0.1-0.1-0.1c0,0,0-0.1,0-0.1v-0.1l0.3-1.4c0-0.1,0.1-0.1,0.1-0.2c0,0,0.1-0.1,0.2-0.1H81c0.1,0,0.1,0,0.2,0.1
+						c0,0,0.1,0.1,0.1,0.2l0.3,1.4l0,0.1l0,0.1C81.6,25.8,81.5,25.9,81.5,25.9z"/>
+					<path fill="#F9FFEE" d="M97.9,31c0,0.1,0.1,0.1,0.1,0.2V45c0,0,0,0.1-0.1,0.1s-0.1,0.1-0.2,0.1l-8.6,2v10.2l0.5,0.3
+						c0.1,0,0.1,0.1,0.1,0.1l0,0.1l0,0.1l-0.3,1.4c0,0-0.1,0.1-0.1,0.1c0,0-0.1,0.1-0.2,0.1h-5.6c-0.1,0-0.1,0-0.2-0.1
+						c0,0-0.1-0.1-0.1-0.1L82.9,58c0-0.1,0-0.1,0-0.2c0-0.1,0.1-0.1,0.1-0.1l0.6-0.3V30.4l-0.6-0.3c0,0-0.1-0.1-0.1-0.2s0-0.1,0-0.2
+						l0.4-1.4c0-0.1,0.1-0.1,0.1-0.2c0,0,0.1-0.1,0.2-0.1h11.2c0.1,0,0.1,0,0.2,0.1L97.9,31z M92.5,40.9v-7.2h-3.3v7.9L92.5,40.9z"/>
+				</g>
+				<g>
+					<path fill="#EFBB35" d="M114.5,26.8c0,0.1,0.1,0.1,0.1,0.2v29.5c0,0.1,0,0.1-0.1,0.2l-2.8,2.8c-0.1,0-0.1,0.1-0.2,0.1h-9.1
+						c-0.1,0-0.1,0-0.2-0.1l-2.8-2.8c-0.1,0-0.1-0.1-0.1-0.2V27.1c0-0.1,0-0.1,0.1-0.2l2.8-2.8c0,0,0.1-0.1,0.2-0.1h9.1
+						c0.1,0,0.1,0,0.2,0.1L114.5,26.8z M109.1,54.2V29.4h-4.4v24.8H109.1z"/>
+					<path fill="#EFBB35" d="M132.2,24.2v6c0,0.1,0,0.1-0.1,0.2c0,0-0.1,0.1-0.2,0.1l-1.4,0.4c0,0-0.1,0-0.2,0c-0.1,0-0.1-0.1-0.1-0.1
+						l-0.6-1.3H122V38l5.1-1l0.3-0.6c0-0.1,0.1-0.1,0.2-0.1c0.1,0,0.1,0,0.2,0l1.4,0.4c0.1,0,0.1,0.1,0.2,0.1s0.1,0.1,0.1,0.2v5.6
+						c0,0.1,0,0.1-0.1,0.2c0,0-0.1,0.1-0.2,0.1l-1.4,0.3h-0.2c0,0-0.1-0.1-0.1-0.1l-0.1-0.2l-5.4,1.1v13.6l0.5,0.3
+						c0.1,0,0.1,0.1,0.1,0.1c0,0,0,0.1,0,0.1l0,0.1l-0.3,1.4c0,0-0.1,0.1-0.1,0.1c0,0-0.1,0.1-0.2,0.1h-5.6c-0.1,0-0.1,0-0.2-0.1
+						c0,0-0.1-0.1-0.1-0.1l-0.3-1.4v-0.2c0,0,0.1-0.1,0.1-0.1l0.5-0.3V26.2l-0.5-0.3c-0.1,0-0.1-0.1-0.1-0.1c0,0,0-0.1,0-0.1v-0.1
+						l0.3-1.4c0,0,0.1-0.1,0.1-0.1c0,0,0.1-0.1,0.2-0.1h15.5c0.1,0,0.1,0,0.2,0.1C132.1,24.1,132.2,24.1,132.2,24.2z"/>
+					<path fill="#EFBB35" d="M149.8,24.2v6c0,0.1,0,0.1-0.1,0.2s-0.1,0.1-0.2,0.1l-1.4,0.4c0,0-0.1,0-0.2,0c-0.1,0-0.1-0.1-0.1-0.1
+						l-0.6-1.3h-7.6V38l5.1-1l0.3-0.6c0-0.1,0.1-0.1,0.2-0.1c0.1,0,0.1,0,0.2,0l1.4,0.4c0.1,0,0.1,0.1,0.2,0.1s0.1,0.1,0.1,0.2v5.6
+						c0,0.1,0,0.1-0.1,0.2c0,0-0.1,0.1-0.2,0.1l-1.4,0.3h-0.2c0,0-0.1-0.1-0.1-0.1l-0.1-0.2l-5.4,1.1v13.6l0.5,0.3
+						c0.1,0,0.1,0.1,0.1,0.1c0,0,0,0.1,0,0.1l0,0.1l-0.3,1.4c0,0-0.1,0.1-0.1,0.1c0,0-0.1,0.1-0.2,0.1h-5.6c-0.1,0-0.1,0-0.2-0.1
+						c0,0-0.1-0.1-0.1-0.1l-0.3-1.4v-0.2c0,0,0.1-0.1,0.1-0.1l0.5-0.3V26.2l-0.5-0.3c-0.1,0-0.1-0.1-0.1-0.1c0,0,0-0.1,0-0.1v-0.1
+						l0.3-1.4c0,0,0.1-0.1,0.1-0.1s0.1-0.1,0.2-0.1h15.5c0.1,0,0.1,0,0.2,0.1C149.8,24.1,149.8,24.1,149.8,24.2z"/>
+				</g>
 			</g>
-			<g>
-				<path fill="#EFBB35" d="M114.5,26.8c0,0.1,0.1,0.1,0.1,0.2v29.5c0,0.1,0,0.1-0.1,0.2l-2.8,2.8c-0.1,0-0.1,0.1-0.2,0.1h-9.1
-					c-0.1,0-0.1,0-0.2-0.1l-2.8-2.8c-0.1,0-0.1-0.1-0.1-0.2V27.1c0-0.1,0-0.1,0.1-0.2l2.8-2.8c0,0,0.1-0.1,0.2-0.1h9.1
-					c0.1,0,0.1,0,0.2,0.1L114.5,26.8z M109.1,54.2V29.4h-4.4v24.8H109.1z"/>
-				<path fill="#EFBB35" d="M132.2,24.2v6c0,0.1,0,0.1-0.1,0.2c0,0-0.1,0.1-0.2,0.1l-1.4,0.4c0,0-0.1,0-0.2,0c-0.1,0-0.1-0.1-0.1-0.1
-					l-0.6-1.3H122V38l5.1-1l0.3-0.6c0-0.1,0.1-0.1,0.2-0.1c0.1,0,0.1,0,0.2,0l1.4,0.4c0.1,0,0.1,0.1,0.2,0.1s0.1,0.1,0.1,0.2v5.6
-					c0,0.1,0,0.1-0.1,0.2c0,0-0.1,0.1-0.2,0.1l-1.4,0.3h-0.2c0,0-0.1-0.1-0.1-0.1l-0.1-0.2l-5.4,1.1v13.6l0.5,0.3
-					c0.1,0,0.1,0.1,0.1,0.1c0,0,0,0.1,0,0.1l0,0.1l-0.3,1.4c0,0-0.1,0.1-0.1,0.1c0,0-0.1,0.1-0.2,0.1h-5.6c-0.1,0-0.1,0-0.2-0.1
-					c0,0-0.1-0.1-0.1-0.1l-0.3-1.4v-0.2c0,0,0.1-0.1,0.1-0.1l0.5-0.3V26.2l-0.5-0.3c-0.1,0-0.1-0.1-0.1-0.1c0,0,0-0.1,0-0.1v-0.1
-					l0.3-1.4c0,0,0.1-0.1,0.1-0.1c0,0,0.1-0.1,0.2-0.1h15.5c0.1,0,0.1,0,0.2,0.1C132.1,24.1,132.2,24.1,132.2,24.2z"/>
-				<path fill="#EFBB35" d="M149.8,24.2v6c0,0.1,0,0.1-0.1,0.2s-0.1,0.1-0.2,0.1l-1.4,0.4c0,0-0.1,0-0.2,0c-0.1,0-0.1-0.1-0.1-0.1
-					l-0.6-1.3h-7.6V38l5.1-1l0.3-0.6c0-0.1,0.1-0.1,0.2-0.1c0.1,0,0.1,0,0.2,0l1.4,0.4c0.1,0,0.1,0.1,0.2,0.1s0.1,0.1,0.1,0.2v5.6
-					c0,0.1,0,0.1-0.1,0.2c0,0-0.1,0.1-0.2,0.1l-1.4,0.3h-0.2c0,0-0.1-0.1-0.1-0.1l-0.1-0.2l-5.4,1.1v13.6l0.5,0.3
-					c0.1,0,0.1,0.1,0.1,0.1c0,0,0,0.1,0,0.1l0,0.1l-0.3,1.4c0,0-0.1,0.1-0.1,0.1c0,0-0.1,0.1-0.2,0.1h-5.6c-0.1,0-0.1,0-0.2-0.1
-					c0,0-0.1-0.1-0.1-0.1l-0.3-1.4v-0.2c0,0,0.1-0.1,0.1-0.1l0.5-0.3V26.2l-0.5-0.3c-0.1,0-0.1-0.1-0.1-0.1c0,0,0-0.1,0-0.1v-0.1
-					l0.3-1.4c0,0,0.1-0.1,0.1-0.1s0.1-0.1,0.2-0.1h15.5c0.1,0,0.1,0,0.2,0.1C149.8,24.1,149.8,24.1,149.8,24.2z"/>
-			</g>
-		</g>
-		</svg>
-	</a>
+			</svg>
+		</a>
+	</footer>
 	<div class="popUp">
 		<a href="#" class="popUp__close">
 			<div class="outer">
@@ -208,22 +203,10 @@
 		I'd recomend you to visit this website again with computer browser!
 	</div>
 	<script>
-		var _gaq = _gaq || [];
-		_gaq.push(['_setAccount', 'UA-138501898-2']);
-		_gaq.push(['_trackPageview']);
-
-		(function() {
-		  var ga = document.createElement('script');
-		  ga.type = 'text/javascript';
-		  ga.async = true;
-		  ga.src = 'https://ssl.google-analytics.com/ga.js';
-		  var s = document.getElementsByTagName('script')[0];
-		  s.parentNode.insertBefore(ga, s);
-		})();
+		var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-138501898-2"]),_gaq.push(["_trackPageview"]),function(){var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.src="https://ssl.google-analytics.com/ga.js";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)}();
 	</script>
 	<script>
-		let triggerLink=document.querySelectorAll(".middle__link");function setHeights(){_gaq.push(["_trackEvent","page_resized","resized"]),document.querySelectorAll(".middle__wrap:not(.middle__img_wr)").forEach(function(e){let t=0;for(var i=0;i<e.children.length;i++)t+=e.children[i].offsetHeight;e.style.height=t+"px"});let e=document.querySelector(".middle__img_wr"),t=e.children[0].offsetHeight;e.style.height=t+"px"}triggerLink.forEach(function(e){e.addEventListener("click",function(e){_gaq.push(["_trackEvent","section_clicked",e.target.id]),e.preventDefault(),this.classList.add("clicked"),this.parentNode.classList.toggle("opened"),this.parentNode.parentNode.classList.toggle("condition")})});let imgPopUp=document.querySelector(".popUp__img"),imgClick=document.querySelectorAll(".imgClick");imgClick.forEach(function(e){e.addEventListener("click",function(e){e.preventDefault(),imgPopUp.src=e.target.src;let t=e.target.getAttribute("data-desc");document.querySelector(".popUp__text").innerHTML=t,document.querySelector(".popUp").classList.add("show"),_gaq.push(["_trackEvent","image_clicked",imgPopUp.src])})});let imgClose=document.querySelector(".popUp__close");imgClose.addEventListener("click",function(e){e.preventDefault(),document.querySelector(".popUp").classList.add("hide"),setTimeout(function(){document.querySelector(".popUp").classList.remove("show"),document.querySelector(".popUp").classList.remove("hide")},1e3)});let closeSection=document.querySelectorAll(".middle__close");closeSection.forEach(function(e){e.addEventListener("click",function(e){e.preventDefault(),this.parentNode.classList.toggle("opened"),this.parentNode.parentNode.classList.toggle("condition"),triggerLink.forEach(function(e){e.classList.remove("clicked")}),_gaq.push(["_trackEvent","close_section","close_section"])})}),document.querySelector(".top-interactive_1").addEventListener("click",function(e){e.preventDefault(),this.classList.add("hide"),document.querySelector(".top-interactive_2").classList.add("show"),_gaq.push(["_trackEvent","top_hidden_click","1"])}),document.querySelector(".top-interactive_2").addEventListener("click",function(e){e.preventDefault(),this.classList.add("hide"),document.querySelector(".top__text").classList.add("show"),_gaq.push(["_trackEvent","top_hidden_click","2"])}),document.querySelector(".logo").addEventListener("click",function(e){_gaq.push(["_trackEvent","logo_clicked","logo"])}),console.log("%c Hi there!","color: #efbb35"),console.log(" "),console.log("%c What do u want to find?","color: #efbb35"),-1!=window.location.href.indexOf("how_to_use")&&(document.querySelector(".middle__item:nth-child(2) .middle__link").classList.add("clicked"),document.querySelector(".middle__item:nth-child(2) .middle__link").parentNode.classList.toggle("opened"),document.querySelector(".middle__item:nth-child(2) .middle__link").parentNode.parentNode.classList.toggle("condition")),setHeights(),setTimeout(function(){setHeights()},100),setTimeout(function(){setHeights()},300),setTimeout(function(){setHeights()},500),window.addEventListener("resize",setHeights);
-		
+		let triggerLink=document.querySelectorAll(".middle__link");function setHeights(){document.querySelectorAll(".middle__wrap:not(.middle__img_wr)").forEach(function(e){let t=0;for(var o=0;o<e.children.length;o++)t+=e.children[o].offsetHeight;e.style.height=t+"px"});let e=document.querySelector(".middle__img_wr"),t=e.children[0].children[0].offsetHeight;e.style.height=t+"px"}triggerLink.forEach(function(e){e.addEventListener("click",function(e){_gaq.push(["_trackEvent","section_clicked",e.target.id]),e.preventDefault(),this.classList.add("clicked"),this.parentNode.classList.toggle("opened"),this.parentNode.parentNode.classList.toggle("condition")})});let imgPopUp=document.querySelector(".popUp__img"),imgClick=document.querySelectorAll(".imgClick");imgClick.forEach(function(e){e.addEventListener("click",function(e){e.preventDefault(),imgPopUp.src=e.target.src;let t=e.target.getAttribute("data-desc");document.querySelector(".popUp__text").innerHTML=t,document.querySelector(".popUp").classList.add("show"),_gaq.push(["_trackEvent","image_clicked",imgPopUp.src])})});let imgClose=document.querySelector(".popUp__close");imgClose.addEventListener("click",function(e){e.preventDefault(),document.querySelector(".popUp").classList.add("hide"),setTimeout(function(){document.querySelector(".popUp").classList.remove("show"),document.querySelector(".popUp").classList.remove("hide")},1e3)});let closeSection=document.querySelectorAll(".middle__close");closeSection.forEach(function(e){e.addEventListener("click",function(e){e.preventDefault(),this.parentNode.classList.toggle("opened"),this.parentNode.parentNode.classList.toggle("condition"),triggerLink.forEach(function(e){e.classList.remove("clicked")}),_gaq.push(["_trackEvent","close_section","close_section"])})}),document.querySelector(".top-interactive_1").addEventListener("click",function(e){e.preventDefault(),this.classList.add("hide"),document.querySelector(".top-interactive_2").classList.add("show"),_gaq.push(["_trackEvent","top_hidden_click","1"])}),document.querySelector(".top-interactive_2").addEventListener("click",function(e){e.preventDefault(),this.classList.add("hide"),document.querySelector(".top__text").classList.add("show"),_gaq.push(["_trackEvent","top_hidden_click","2"])}),document.querySelector(".logo").addEventListener("click",function(e){_gaq.push(["_trackEvent","logo_clicked","logo"])}),console.log("%c Hi there!","color: #efbb35"),console.log(" "),console.log("%c What do u want to find?","color: #efbb35"),-1!=window.location.href.indexOf("how_to_use")&&(document.querySelector(".middle__item:nth-child(2) .middle__link").classList.add("clicked"),document.querySelector(".middle__item:nth-child(2) .middle__link").parentNode.classList.toggle("opened"),document.querySelector(".middle__item:nth-child(2) .middle__link").parentNode.parentNode.classList.toggle("condition")),setHeights(),window.addEventListener("resize",setHeights),setTimeout(setHeights,100),setTimeout(setHeights,300),setTimeout(setHeights,500),setTimeout(setHeights,1e3);let dom_observer=new MutationObserver(setHeights);dom_observer.observe(document.documentElement,{childList:!0,subtree:!0,characterData:!0});
 	</script>
 </body>
 </html>
