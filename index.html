@@ -3,7 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="Description" content="Advanced blocker for ads, distributions, popups. Cleans Internet. Improves reading experience! Popup off? PopUpOFF!">
+	<meta name="Description" content="Removes popups, overlays, cookie notifications and restrictions another tools can not. Makes reading experience better.">
+	<meta name="google-site-verification" content="VOAqlvL1BbL_Glqy47fldDLcHlz8MjARlIfftmcdios" />
 	<link rel="shortcut icon" type="image/png" href="logo32.png"/>
 	<title>PopUpOFF - makes internet experience clean. Blocking pop ups.</title>
 </head>
@@ -15,9 +16,7 @@
 		    overflow: hidden;
 		    width: 100%;
 		    height: 100%;
-		    background-color: #000;
 		    background-color: #222831;
-		    color: #ccc;
 		    color: #f9ffee;
 		    padding: 0;
 		    margin: 0;
@@ -174,7 +173,6 @@
 		}
 
 		.middle__item.opened {
-		    /*max-height: 500px;*/
 		    max-height: 550px
 		}
 
@@ -440,6 +438,10 @@
 			z-index: 1;
 		}
 
+		.mobile {
+		    display: none
+		}
+
 		@media screen and (max-width:1601px) {
 		    .top__text {
 		        padding-bottom: 20px
@@ -476,10 +478,10 @@
 		    .popUp__text {
 		        font-size: 20px
 		    }
-		}
-
-		.mobile {
-		    display: none
+		    .middle__video{
+		    	width: 400px;
+		    	height: 226px;
+		    }
 		}
 
 		@media screen and (max-width:1024px) {
@@ -516,6 +518,13 @@
 	<main>
 		<ul class="middle">
 			<li class="middle__item">
+				<a class="middle__link" href="#">Video showcase</a>
+				<div class="middle__wrap cont_wr">
+					<iframe class="middle__video" width="560" height="315" src="https://www.youtube.com/embed/dMLBZaGud7g?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</div>
+				<a href="#" class="middle__close middle__close-pad_top closeVideo">Got it!</a>
+			</li>
+			<li class="middle__item">
 				<a class="middle__link" id="whyThis" href="#">Why this extension?</a>
 				<ul class="middle__wrap cont_wr middle__img_wr">
 					<li class="cont_wr__item cont_wr__img_item">
@@ -540,16 +549,16 @@
 				<a class="middle__link" id="howToUseIt" href="#">How to use it??</a>
 				<ul class="middle__wrap cont_wr">
 					<li class="cont_wr__item">
-						<p>Lets assume you already installed it. <br> There are three modes you can use:</p>
+						<p>There are three modes you can use:</p>
 					</li>
 					<li class="cont_wr__item">
-						<p>"Hard mode" and "Easy mode". They both blocking popups that interfere with your reading experience. Easy mode leaves header/navigation bar on page, so u can change topic. Hard mode does not. There are plenty of websites that deserve it.</p>
+						<p>"Hard mode" and "Easy mode". They both blocking popups that interfere with your reading experience. Easy mode leaves navigation bar on page, so u can change topic. Hard mode does not. There are plenty of websites that deserve it.</p>
 					</li>
 					<li class="cont_wr__item">
-						<p>These modes are available for all pages on current website or for every page you visit while given mode is active. They are "this site" or "everywhere".</p>
+						<p>These modes are available for all pages on current website or for every website you visit while given mode is active. They are "this site" or "everywhere". "Everywhere" mode temporarily removed. Will back in version 2.0.0.</p>
 					</li>
 					<li class="cont_wr__item">
-						<p>Last mode is "I JUST WANT TO READ!" - It disables all things that can interrupt you from reading. Works for current page until u reload it or leave in any way.</p>
+						<p>Last mode is "I JUST WANT TO READ!" - If nothing else helps. It disables all things that can interrupt you from reading. Works for current page until u reload it or leave in any way.</p>
 					</li>
 				</ul>
 				<a href="#" class="middle__close">Got it!</a>
@@ -561,13 +570,13 @@
 						<p>I am Romanist - independent developer who built this extension for myself.</p>
 					</li>
 					<li class="cont_wr__item">
-						<p>Every day I face great number of websites that trying to impose different things for me. It could be ads, distributions, courses. Anything. Now I am oficially tired of it. If you are as well, welcome.</p>
+						<p>Every day I face great number of websites that trying to impose different things to me. It could be ads, distributions, courses. Anything. Now I am oficially tired of it. If you are as well, welcome.</p>
 					</li>
 					<li class="cont_wr__item">
 						<p>I havent found any extension that could help me here. So algorithm was easy. Face problem -> check is there existing solution -> if no, check if you able to resolve it -> if yes, do it. So did I.</p>
 					</li>
 					<li class="cont_wr__item">
-						<p>I cooperate with noone. To be honest I collect some stats. Not sites u visit, just what features are used more and what are less to understand better what ones are needed. You can help me more by sending your feedback to <a class="in_text_link" href="mailto:RomanistHere@gmail.com">email</a></p>
+						<p>I cooperate with noone. To be honest I collect some stats. Not sites u visit, just what features are used more and what are less to understand better what ones are needed. You can help me more by sending your feedback to <a class="in_text_link" href="mailto:RomanistHere@gmail.com">email</a>.</p>
 					</li>
 					<li class="cont_wr__item">
 						<p>So feel free to use it!</p>
@@ -582,13 +591,13 @@
 						<p>Ultra-lightweight. Ultra-simple. <a class="in_text_link" target="_blank" href="https://github.com/RomanistHere/PopUpOFF">Open source</a>. Does things another tools do not.</p>
 					</li>
 					<li class="cont_wr__item">
-						<p>Can break a few websites down if you use it in "everywhere" mode, what I do not recommend. Part of sites use same mechanics as popups do . However, nothing serious can happen. Turn it off for this website, reload page, <a class="in_text_link" href="mailto:RomanistHere@gmail.com">send me website</a>. We will fix it up!</p>
+						<p>Part of sites use same mechanics as popups do. They can work not properly. However, nothing serious can happen. Turn extension off for this website, reload page, <a class="in_text_link" href="mailto:RomanistHere@gmail.com">send me website</a>. We will fix it up!</p>
 					</li>
 					<li class="cont_wr__item">
-						<p>PopUpOFF does not block content ad. Use it in pair with any adblocker</p>
+						<p>PopUpOFF does not block content ad. Use it in pair with any adblocker.</p>
 					</li>
 					<li class="cont_wr__item">
-						<p>Addictive. Literally. After you use it there will be no way back. While PopUpOFF was not released, I had to use another computer without it installed there. It was worst few hours of internet experience in my life. I had to close these annoying inifinite bars and popups, ugh...</p>
+						<p>Addictive. Literally. After you use it, there will be no way back. While PopUpOFF was not released, I had to use another computer without it installed there. And it was worst few hours of internet experience in my life. I had to close these annoying inifinite bars and popups, ugh...</p>
 					</li>
 				</ul>
 				<a href="#" class="middle__close">Got it!</a>
@@ -597,13 +606,13 @@
 				<a class="middle__link" id="feedback" href="#">Feedback and support</a>
 				<ul class="middle__wrap cont_wr">
 					<li class="cont_wr__item">
-						<p>So if u have wishes and suggestions or just want to thank me, write me down it here: <a class="in_text_link" href="mailto:RomanistHere@gmail.com">RomanistHere@gmail.com</a></p>
+						<p>So if u have wishes and suggestions or just want to thank me, write me down it here: <a class="in_text_link" href="mailto:RomanistHere@gmail.com">RomanistHere@gmail.com</a>.</p>
 					</li>
 					<li class="cont_wr__item">
-						<p>You could also make further development possible and faster by sending me what you think my work worth is: WM Z167685930722, <a class="in_text_link" target="_blank" href="https://money.yandex.ru/to/410019187512228">YM</a>  410019187512228</p>
+						<p>You could also make further development possible and faster by sending me what you think my work worth is: WM Z167685930722, <a class="in_text_link" target="_blank" href="https://money.yandex.ru/to/410019187512228">YM</a>  410019187512228.</p>
 					</li>
 					<li class="cont_wr__item">
-						<p>Important thing! I could not test PopUpOFF everywhere, so if you think you found website where it has to work but it isn't, please, write right to <a class="in_text_link" href="mailto:RomanistHere@gmail.com">me</a> - it will help a lot</p>
+						<p>Important thing! I could not test PopUpOFF everywhere, so if you think you found website where it has to work but it isn't, please, write right to <a class="in_text_link" href="mailto:RomanistHere@gmail.com">me</a> - it will help a lot.</p>
 					</li>
 				</ul>
 				<a href="#" class="middle__close">Got it!</a>
@@ -612,7 +621,7 @@
 				<a class="middle__link" id="future" href="#">Future features</a>
 				<ul class="middle__wrap cont_wr">
 					<li class="cont_wr__item">
-						<p>Creating data base of websites where users turn extension on. So when u first time visit it PopUpOFF will automaticly turn on.</p>
+						<p>Rebuild "everywhere" mode with "auto". It will find website you opened in database of "bad" websites, and automaticly turn extension on here. So there will be no reason to even click to enjoy internet.</p>
 					</li>
 					<li class="cont_wr__item">
 						<p>Managing by key combination.</p>
@@ -623,7 +632,7 @@
 						<p>
 					</li>
 					<li class="cont_wr__item">
-						<p>Translating into another languages.</p>
+						<p>Translating interface and instructions into different languages.</p>
 					</li>
 					<li class="cont_wr__item">
 						<p>Providing to another platforms like Firefox.</p>
@@ -800,14 +809,19 @@
 			_gaq.push(['_trackEvent', 'logo_clicked', 'logo']);
 		});
 
+		document.querySelector('.closeVideo').addEventListener('click', function() {
+			let videoSRC = document.querySelector('.middle__video').getAttribute('src');
+			document.querySelector('.middle__video').setAttribute('src', videoSRC);
+		});
+
 		console.log('%c Hi there!', 'color: #efbb35');
 		console.log(' ');
 		console.log('%c What do u want to find?', 'color: #efbb35');
 
 		if (window.location.href.indexOf("how_to_use") != -1) {
-			document.querySelector('.middle__item:nth-child(2) .middle__link').classList.add('clicked');
-	        document.querySelector('.middle__item:nth-child(2) .middle__link').parentNode.classList.toggle('opened');
-	        document.querySelector('.middle__item:nth-child(2) .middle__link').parentNode.parentNode.classList.toggle('condition');
+			document.querySelector('.middle__item:nth-child(3) .middle__link').classList.add('clicked');
+	        document.querySelector('.middle__item:nth-child(3) .middle__link').parentNode.classList.toggle('opened');
+	        document.querySelector('.middle__item:nth-child(3) .middle__link').parentNode.parentNode.classList.toggle('condition');
 		}
 
 		setHeights();
