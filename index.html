@@ -3,14 +3,14 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="Description" content="Removes popups, overlays, cookie notifications and restrictions another tools can not. Makes reading experience better.">
+	<meta name="Description" content="Chrome extension. Removes popups, overlays, cookie and 'please, disable adBlock' notifications with restrictions, another tools can not. Makes internet experience better.">
 	<meta name="google-site-verification" content="VOAqlvL1BbL_Glqy47fldDLcHlz8MjARlIfftmcdios" />
 	<link rel="shortcut icon" type="image/png" href="logo32.png"/>
 	<meta property="og:title" content="PopUpOFF"/>
 	<meta property="og:image" content="https://romanisthere.github.io/PopUpOFF-Website/images/logofull.png"/>
-	<meta property="og:description" content="Removes and prevents popups, overlays and cookie notifications, other tools do not. Enjoy the original look of the internet."/>
+	<meta property="og:description" content="Chrome extension. Improves the web. Removes and prevents popups, overlays and cookie notifications, other tools do not. Enjoy the original look of the internet."/>
 	<meta property="og:url" content="https://romanisthere.github.io/PopUpOFF-Website/" />
-	<title>PopUpOFF - makes internet experience clean. Removes popups. Prevents popups. Disables popups. Blocks popups and overlays.</title>
+	<title>PopUpOFF - Chrome extension. Improves the web.</title>
 </head>
 <body>
 	<style>
@@ -24,9 +24,9 @@
 	<main>
 		<ul class="middle">
 			<li class="middle__item">
-				<a class="middle__link" href="#">Video showcase</a>
+				<a class="middle__link" id="video" href="#">Video showcase</a>
 				<div class="middle__wrap cont_wr">
-					<iframe class="middle__video" width="560" height="315" src="https://www.youtube.com/embed/dMLBZaGud7g?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					<iframe title="video showcase" class="middle__video" width="560" height="315" src="https://www.youtube.com/embed/dMLBZaGud7g?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 				</div>
 				<a href="#" class="middle__close middle__close-pad_top closeVideo">Got it!</a>
 			</li>
@@ -34,17 +34,17 @@
 				<a class="middle__link" id="whyThis" href="#">Why this extension?</a>
 				<ul class="middle__wrap cont_wr middle__img_wr">
 					<li class="cont_wr__item cont_wr__img_item">
-						<a class="imgClick" href="#">
+						<a title="Screen without extensions. Click to zoom." class="imgClick" href="#">
 							<img data-desc="This is how typical site I visit looks like. This screen we use clean chrome without any extensions." class="cont_wr__image" src="images/3.jpg" alt="image example">
 						</a>
 					</li>
 					<li class="cont_wr__item cont_wr__img_item">
-						<a class="imgClick" href="#">
+						<a title="Screen with top 10 extensions from Store. Click to zoom." class="imgClick" href="#">
 							<img data-desc="This is how typical site I visit looks like. This screen we use all extensions I could find for blocking ads and popups." class="cont_wr__image" src="images/4.jpg" alt="image example">
 						</a>
 					</li>
 					<li class="cont_wr__item cont_wr__img_item">
-						<a class="imgClick" href="#">
+						<a title="Screen with PopUpOFF. Click to zoom." class="imgClick" href="#">
 							<img data-desc="This is how typical site I visit looks like. This screen we use PopUpOFF. Help comforting yourself!" class="cont_wr__image" src="images/5.jpg" alt="image example">
 						</a>
 					</li>
@@ -58,34 +58,34 @@
 						<p>There are three modes you can use:</p>
 					</li>
 					<li class="cont_wr__item">
-						<p>"Hard mode" and "Easy mode". They both blocking popups that interfere with your reading experience. Easy mode leaves navigation bar on page, so u can change topic. Hard mode does not. There are plenty of websites that deserve it.</p>
+						<p>Hard mode - most effective and fast method to deal with annoying content on page. Removes all stuck to screen elements. Also prevents their further appearing on any page of given website until you disable it.</p>
 					</li>
 					<li class="cont_wr__item">
-						<p>These modes are available for all pages on current website or for every website you visit while given mode is active. They are "this site" or "everywhere". "Everywhere" mode temporarily removed. Will back in version 2.0.0.</p>
+						<p>Easy mode works little bit slower. <a class="in_text_link" target="_blank" rel="noreferrer" href="https://github.com/RomanistHere/PopUpOFF">Tech info why.</a> Do exactly the same thing as "Hard" one, except it leaves navigation bars/sticky headers, so you can change topic, etc.</p>
 					</li>
 					<li class="cont_wr__item">
-						<p>Last mode is "I JUST WANT TO READ!" - If nothing else helps. It disables all things that can interrupt you from reading. Works for current page until u reload it or leave in any way.</p>
+						<p>Last one is "I JUST WANT TO READ!" - If nothing else helps. It disables all things that can interrupt you from reading. Works for current page until u reload it or leave in any way.</p>
 					</li>
 				</ul>
 				<a href="#" class="middle__close">Got it!</a>
 			</li>
 			<li class="middle__item">
-				<a class="middle__link" if="whoAmI" href="#">Who am I???</a>
+				<a class="middle__link" id="whoAmI" href="#">Who am I???</a>
 				<ul class="middle__wrap cont_wr">
 					<li class="cont_wr__item">
-						<p>I am Romanist - independent developer who built this extension for myself.</p>
+						<p>I am Romanist - developer who built this extension for myself.</p>
 					</li>
 					<li class="cont_wr__item">
-						<p>Every day I face great number of websites that trying to impose different things to me. It could be ads, distributions, courses. Anything. Now I am oficially tired of it. If you are as well, welcome.</p>
+						<p>Every day I face great number of websites that trying to impose different things to me. It could be ads, distributions, courses. Anything. Now I am oficially tired of it. If you are as well, welcome aboard.</p>
 					</li>
 					<li class="cont_wr__item">
-						<p>I havent found any extension that could help me here. So algorithm was easy. Face problem -> check is there existing solution -> if no, check if you able to resolve it -> if yes, do it. So did I.</p>
+						<p>I havent found any extension that could help me here. So algorithm was easy. Face problem -> check is there existing solution -> check if you able to resolve it -> do it. So did I.</p>
 					</li>
 					<li class="cont_wr__item">
-						<p>I cooperate with noone. To be honest I collect some stats. Not sites u visit, just what features are used more and what are less to understand better what ones are needed. You can help me more by sending your feedback to <a class="in_text_link" href="mailto:RomanistHere@gmail.com">email</a>.</p>
+						<p>I cooperate with noone. To be honest I collecting some stats. Not sites, you visit, just what features are used more and what are less to understand better what ones are needed. You can help me more by sending your feedback to <a class="in_text_link" href="mailto:RomanistHere@gmail.com">email</a>.</p>
 					</li>
 					<li class="cont_wr__item">
-						<p>So feel free to use it!</p>
+						<p>Feel free to use it!</p>
 					</li>
 				</ul>
 				<a href="#" class="middle__close">Got it!</a>
@@ -94,16 +94,19 @@
 				<a class="middle__link" id="consAndPros" href="#">Cons and pros</a>
 				<ul class="middle__wrap cont_wr">
 					<li class="cont_wr__item">
-						<p>Ultra-lightweight. Ultra-simple. <a class="in_text_link" target="_blank" href="https://github.com/RomanistHere/PopUpOFF">Open source</a>. Does things another tools do not.</p>
-					</li>
-					<li class="cont_wr__item">
-						<p>Part of sites use same mechanics as popups do. They can work not properly. However, nothing serious can happen. Turn extension off for this website, reload page, <a class="in_text_link" href="mailto:RomanistHere@gmail.com">send me website</a>. We will fix it up!</p>
-					</li>
-					<li class="cont_wr__item">
-						<p>PopUpOFF does not block content ad. Use it in pair with any adblocker.</p>
+						<p>Ultra-lightweight. Ultra-simple. <a class="in_text_link" target="_blank" rel="noreferrer" href="https://github.com/RomanistHere/PopUpOFF">Open source</a>. Does things another tools do not.</p>
 					</li>
 					<li class="cont_wr__item">
 						<p>Addictive. Literally. After you use it, there will be no way back. While PopUpOFF was not released, I had to use another computer without it installed there. And it was worst few hours of internet experience in my life. I had to close these annoying inifinite bars and popups, ugh...</p>
+					</li>
+					<li class="cont_wr__item">
+						<p>Extension is still in development. So there will be new features and improvements. But there also could be bugs. I will keep you in touch.</p>
+					</li>
+					<li class="cont_wr__item">
+						<p>Free and always will.</p>
+					</li>
+					<li class="cont_wr__item">
+						<p>PopUpOFF does not block content ad. Use it in pair with any adblocker.</p>
 					</li>
 				</ul>
 				<a href="#" class="middle__close">Got it!</a>
@@ -112,10 +115,10 @@
 				<a class="middle__link" id="feedback" href="#">Feedback and support</a>
 				<ul class="middle__wrap cont_wr">
 					<li class="cont_wr__item">
-						<p>So if u have wishes and suggestions or just want to thank me, write me down it here: <a class="in_text_link" href="mailto:RomanistHere@gmail.com">RomanistHere@gmail.com</a>.</p>
+						<p>So, if you have wishes, suggestions or just want to thank me, write me down it here: <a class="in_text_link" href="mailto:RomanistHere@gmail.com">RomanistHere@gmail.com</a>.</p>
 					</li>
 					<li class="cont_wr__item">
-						<p>You could also make further development possible and faster by sending me what you think my work worth is: WM Z167685930722, <a class="in_text_link" target="_blank" href="https://money.yandex.ru/to/410019187512228">YM</a>  410019187512228.</p>
+						<p>You could also make further development possible and faster by sending me what you think my work worth is: WM Z167685930722, <a class="in_text_link" target="_blank" rel="noreferrer" href="https://money.yandex.ru/to/410019187512228">YM</a>  410019187512228.</p>
 					</li>
 					<li class="cont_wr__item">
 						<p>Important thing! I could not test PopUpOFF everywhere, so if you think you found website where it has to work but it isn't, please, write right to <a class="in_text_link" href="mailto:RomanistHere@gmail.com">me</a> - it will help a lot.</p>
@@ -127,21 +130,21 @@
 				<a class="middle__link" id="future" href="#">Future features</a>
 				<ul class="middle__wrap cont_wr">
 					<li class="cont_wr__item">
-						<p>Rebuild "everywhere" mode with "auto". It will find website you opened in database of "bad" websites, and automaticly turn extension on here. So there will be no reason to even click to enjoy internet.</p>
-					</li>
-					<li class="cont_wr__item">
-						<p>Managing by key combination.</p>
+						<p>Automatic mode, so you will have no reason to even click. But we need much more active users first. This mode is going to be based on your united experience.</p>
 					</li>
 					<li class="cont_wr__item">
 						<p>
-							<a class="in_text_link" target="_blank" href="https://chrome.google.com/webstore/detail/stylify-unuglify/knnnacgjjmlljheglipemamhdlckpfjc">Read mode. Not only remove all blocking-view elements but improve your reading experience.</a>
+							<a class="in_text_link" target="_blank" rel="noreferrer" href="https://chrome.google.com/webstore/detail/stylify-unuglify/knnnacgjjmlljheglipemamhdlckpfjc">Read mode. Not only remove all blocking-view elements but improve your reading experience in places, where it is not good enough.</a>
 						<p>
 					</li>
 					<li class="cont_wr__item">
-						<p>Translating interface and instructions into different languages.</p>
+						<p>Translating all info into different languages.</p>
 					</li>
 					<li class="cont_wr__item">
 						<p>Providing to another platforms like Firefox.</p>
+					</li>
+					<li class="cont_wr__item">
+						<p>Maybe later some help for mobile phones.</p>
 					</li>
 				</ul>
 				<a href="#" class="middle__close">Got it!</a>
@@ -149,7 +152,7 @@
 		</ul>
 	</main>
 	<footer>
-		<a href="https://chrome.google.com/webstore/detail/popupoff-popup-blocker/ifnkdbpmgkdbfklnbfidaackdenlmhgh" target="_blank" class="logo">
+		<a href="https://chrome.google.com/webstore/detail/popupoff-popup-blocker/ifnkdbpmgkdbfklnbfidaackdenlmhgh" aria-label="linkToStore" rel="noreferrer" target="_blank" class="logo">
 			<svg version="1.2" class="logo__img" baseProfile="tiny" id="Слой_1"
 				 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 167 83"
 				 xml:space="preserve">
@@ -221,6 +224,7 @@
 		var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-138501898-2"]),_gaq.push(["_trackPageview"]),function(){var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.src="https://ssl.google-analytics.com/ga.js";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)}();
 	</script>
 	<script>
-		let triggerLink=document.querySelectorAll(".middle__link");function setHeights(){document.querySelectorAll(".middle__wrap:not(.middle__img_wr)").forEach(function(e){let t=0;for(var o=0;o<e.children.length;o++)t+=e.children[o].offsetHeight;e.style.height=t+"px"});let e=document.querySelector(".middle__img_wr"),t=e.children[0].children[0].offsetHeight;e.style.height=t+"px"}triggerLink.forEach(function(e){e.addEventListener("click",function(e){_gaq.push(["_trackEvent","section_clicked",e.target.id]),e.preventDefault(),this.classList.add("clicked"),this.parentNode.classList.toggle("opened"),this.parentNode.parentNode.classList.toggle("condition")})});let imgPopUp=document.querySelector(".popUp__img"),imgClick=document.querySelectorAll(".imgClick");imgClick.forEach(function(e){e.addEventListener("click",function(e){e.preventDefault(),imgPopUp.src=e.target.src;let t=e.target.getAttribute("data-desc");document.querySelector(".popUp__text").innerHTML=t,document.querySelector(".popUp").classList.add("show"),_gaq.push(["_trackEvent","image_clicked",imgPopUp.src])})});let imgClose=document.querySelector(".popUp__close");imgClose.addEventListener("click",function(e){e.preventDefault(),document.querySelector(".popUp").classList.add("hide"),setTimeout(function(){document.querySelector(".popUp").classList.remove("show"),document.querySelector(".popUp").classList.remove("hide")},1e3)});let closeSection=document.querySelectorAll(".middle__close");closeSection.forEach(function(e){e.addEventListener("click",function(e){e.preventDefault(),this.parentNode.classList.toggle("opened"),this.parentNode.parentNode.classList.toggle("condition"),triggerLink.forEach(function(e){e.classList.remove("clicked")}),_gaq.push(["_trackEvent","close_section","close_section"])})}),document.querySelector(".top-interactive_1").addEventListener("click",function(e){e.preventDefault(),this.classList.add("hide"),document.querySelector(".top-interactive_2").classList.add("show"),_gaq.push(["_trackEvent","top_hidden_click","1"])}),document.querySelector(".top-interactive_2").addEventListener("click",function(e){e.preventDefault(),this.classList.add("hide"),document.querySelector(".top__text").classList.add("show"),_gaq.push(["_trackEvent","top_hidden_click","2"])}),document.querySelector(".logo").addEventListener("click",function(e){_gaq.push(["_trackEvent","logo_clicked","logo"])}),document.querySelector(".closeVideo").addEventListener("click",function(){let e=document.querySelector(".middle__video").getAttribute("src");document.querySelector(".middle__video").setAttribute("src",e)}),console.log("%c Hi there!","color: #efbb35"),console.log(" "),console.log("%c What do u want to find?","color: #efbb35"),-1!=window.location.href.indexOf("how_to_use")&&(document.querySelector(".middle__item:nth-child(3) .middle__link").classList.add("clicked"),document.querySelector(".middle__item:nth-child(3) .middle__link").parentNode.classList.toggle("opened"),document.querySelector(".middle__item:nth-child(3) .middle__link").parentNode.parentNode.classList.toggle("condition")),setHeights(),window.addEventListener("resize",setHeights),setTimeout(setHeights,100),setTimeout(setHeights,300),setTimeout(setHeights,500),setTimeout(setHeights,1e3);let dom_observer=new MutationObserver(setHeights);dom_observer.observe(document.documentElement,{childList:!0,subtree:!0,characterData:!0}),"object"==typeof window.chrome&&-1===navigator.appVersion.indexOf("Edge")?_gaq.push(["_trackEvent","browser","chrome"]):(_gaq.push(["_trackEvent","browser","not_chrome"]),document.querySelector(".browser_text").classList.add("browser_text-show"));	</script>
+		let triggerLink=document.querySelectorAll(".middle__link");function setHeights(){document.querySelectorAll(".middle__wrap:not(.middle__img_wr)").forEach(function(e){let t=0;for(var o=0;o<e.children.length;o++)t+=e.children[o].offsetHeight;e.style.height=t+"px"});let e=document.querySelector(".middle__img_wr"),t=e.children[0].children[0].offsetHeight;e.style.height=t+"px"}triggerLink.forEach(function(e){e.addEventListener("click",function(e){_gaq.push(["_trackEvent","section_clicked",e.target.id]),e.preventDefault(),this.classList.add("clicked"),this.parentNode.classList.toggle("opened"),this.parentNode.parentNode.classList.toggle("condition")})});let imgPopUp=document.querySelector(".popUp__img"),imgClick=document.querySelectorAll(".imgClick");imgClick.forEach(function(e){e.addEventListener("click",function(e){e.preventDefault(),imgPopUp.src=e.target.src;let t=e.target.getAttribute("data-desc");document.querySelector(".popUp__text").innerHTML=t,document.querySelector(".popUp").classList.add("show"),_gaq.push(["_trackEvent","image_clicked",imgPopUp.src])})});let imgClose=document.querySelector(".popUp__close");imgClose.addEventListener("click",function(e){e.preventDefault(),document.querySelector(".popUp").classList.add("hide"),setTimeout(function(){document.querySelector(".popUp").classList.remove("show"),document.querySelector(".popUp").classList.remove("hide")},1e3)});let closeSection=document.querySelectorAll(".middle__close");closeSection.forEach(function(e){e.addEventListener("click",function(e){e.preventDefault(),this.parentNode.classList.toggle("opened"),this.parentNode.parentNode.classList.toggle("condition"),triggerLink.forEach(function(e){e.classList.remove("clicked")}),_gaq.push(["_trackEvent","close_section","close_section"])})}),document.querySelector(".top-interactive_1").addEventListener("click",function(e){e.preventDefault(),this.classList.add("hide"),document.querySelector(".top-interactive_2").classList.add("show"),_gaq.push(["_trackEvent","top_hidden_click","1"])}),document.querySelector(".top-interactive_2").addEventListener("click",function(e){e.preventDefault(),this.classList.add("hide"),document.querySelector(".top__text").classList.add("show"),_gaq.push(["_trackEvent","top_hidden_click","2"])}),document.querySelector(".logo").addEventListener("click",function(e){_gaq.push(["_trackEvent","logo_clicked","logo"])}),document.querySelector(".closeVideo").addEventListener("click",function(){let e=document.querySelector(".middle__video").getAttribute("src");document.querySelector(".middle__video").setAttribute("src",e)}),console.log("%c Hi there!","color: #efbb35"),console.log(" "),console.log("%c What do u want to find?","color: #efbb35"),console.log(" "),console.log("%c These errors is not mine :)","color: #efbb35"),console.log(" "),console.log("%c Have a good day!","color: #efbb35"),-1!=window.location.href.indexOf("how_to_use")&&(document.querySelector(".middle__item:nth-child(3) .middle__link").classList.add("clicked"),document.querySelector(".middle__item:nth-child(3) .middle__link").parentNode.classList.toggle("opened"),document.querySelector(".middle__item:nth-child(3) .middle__link").parentNode.parentNode.classList.toggle("condition")),setHeights(),window.addEventListener("resize",setHeights),setTimeout(setHeights,100),setTimeout(setHeights,300),setTimeout(setHeights,500),setTimeout(setHeights,1e3);let dom_observer=new MutationObserver(setHeights);dom_observer.observe(document.documentElement,{childList:!0,subtree:!0,characterData:!0}),"object"==typeof window.chrome&&-1===navigator.appVersion.indexOf("Edge")?_gaq.push(["_trackEvent","browser","chrome"]):(_gaq.push(["_trackEvent","browser","not_chrome"]),document.querySelector(".browser_text").classList.add("browser_text-show"));
+	</script>
 </body>
 </html>
