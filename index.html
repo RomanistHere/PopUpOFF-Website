@@ -709,7 +709,7 @@
 		<p class="popUp__text"></p>
 	</div>
 	<div class="mobile">
-		I'd recomend you to visit this website again with computer browser!
+		I'd recomend you to visit this website again from PC browser!
 	</div>
 	<p class="browser_text">
 		Visit this website with Chrome for better experience!
@@ -729,18 +729,6 @@
 		})();
 	</script>
 	<script>
-		let triggerLink = document.querySelectorAll(".middle__link");
-
-		triggerLink.forEach(function(element) {
-		    element.addEventListener("click", function(e) {
-		    	_gaq.push(['_trackEvent', 'section_clicked', e.target.id]);
-		    	e.preventDefault();
-		        this.classList.add('clicked');
-		        this.parentNode.classList.toggle('opened');
-		        this.parentNode.parentNode.classList.toggle('condition');
-		    });
-		});
-
 		function setHeights() {
 			let middleWrap = document.querySelectorAll(".middle__wrap:not(.middle__img_wr)");
 			middleWrap.forEach(function(element) {
@@ -754,6 +742,29 @@
 			let sumOfChildsHeights = middleImgWrap.children[0].children[0].offsetHeight;
 			middleImgWrap.style.height = sumOfChildsHeights + 'px';
 		}
+
+		setHeights();
+		window.addEventListener('resize', setHeights);
+
+		let dom_observer = new MutationObserver(setHeights);
+		dom_observer.observe(document.documentElement, { 
+			childList: true, 
+			subtree: true,
+			characterData: true
+		});
+	</script>
+	<script>
+		let triggerLink = document.querySelectorAll(".middle__link");
+
+		triggerLink.forEach(function(element) {
+		    element.addEventListener("click", function(e) {
+		    	_gaq.push(['_trackEvent', 'section_clicked', e.target.id]);
+		    	e.preventDefault();
+		        this.classList.add('clicked');
+		        this.parentNode.classList.toggle('opened');
+		        this.parentNode.parentNode.classList.toggle('condition');
+		    });
+		});
 
 		let imgPopUp = document.querySelector(".popUp__img");
 
@@ -817,42 +828,20 @@
 			document.querySelector('.middle__video').setAttribute('src', videoSRC);
 		});
 
-		console.log('%c Hi there!', 'color: #efbb35');
-		console.log(' ');
-		console.log('%c What do u want to find?', 'color: #efbb35');
-		console.log(' ');
-		console.log('%c These errors is not mine :)', 'color: #efbb35');
-		console.log(' ');
-		console.log('%c Have a good day!', 'color: #efbb35');
-
 		if (window.location.href.indexOf("how_to_use") != -1) {
 			document.querySelector('.middle__item:nth-child(3) .middle__link').classList.add('clicked');
 	        document.querySelector('.middle__item:nth-child(3) .middle__link').parentNode.classList.toggle('opened');
 	        document.querySelector('.middle__item:nth-child(3) .middle__link').parentNode.parentNode.classList.toggle('condition');
 		}
-
-		setHeights();
-		window.addEventListener('resize', setHeights);
-
-		setTimeout(setHeights, 100);
-		setTimeout(setHeights, 300);
-		setTimeout(setHeights, 500);
-		setTimeout(setHeights, 1000);
-
-		let dom_observer = new MutationObserver(setHeights);
-		dom_observer.observe(document.documentElement, { 
-			childList: true, 
-			subtree: true,
-			characterData: true
-		});
-
-		if (typeof window.chrome === "object" && navigator.appVersion.indexOf('Edge') === -1) {
-			// current browser is chrome
-			_gaq.push(['_trackEvent', 'browser', 'chrome']);
-		} else {
-			_gaq.push(['_trackEvent', 'browser', 'not_chrome']);
-			document.querySelector('.browser_text').classList.add('browser_text-show');
-		}
+	</script>
+	<script>
+		console.log('%c Hi there!', 'color: #efbb35');
+		console.log(' ');
+		console.log('%c What do u want to find?', 'color: #efbb35');
+		console.log(' ');
+		console.log('%c These errors are not mine :)', 'color: #efbb35');
+		console.log(' ');
+		console.log('%c Have a good day!', 'color: #efbb35');
 	</script>
 </body>
 </html>
