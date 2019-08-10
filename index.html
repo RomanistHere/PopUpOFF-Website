@@ -907,7 +907,6 @@
 			curScreenWeidth = window.screen.width;
 			if (((oldScreenWidth < 1024) && (curScreenWeidth >= 1024)) ||
 				((oldScreenWidth >= 1024) && (curScreenWeidth < 1024)) ) {
-				_gaq.push(['_trackEvent', 'mad_changings_of_screen', 'why?']);
 				location.reload();
 			}
 			oldScreenWidth = curScreenWeidth;
