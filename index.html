@@ -23,7 +23,8 @@
 		    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 		    line-height: 1.59;
 		    font-weight: 300;
-		    font-size: 18px
+		    font-size: 18px;
+	    	-webkit-tap-highlight-color: transparent;
 		}
 
 		h1,
@@ -496,32 +497,50 @@
 		    }
 		}
 
-		@media screen and (max-width:1024px) {
-		    .mobile {
-		        display: -webkit-flex;
-		        display: -moz-flex;
-		        display: -ms-flex;
-		        display: -o-flex;
-		        display: flex;
-		        justify-content: center;
-		        text-align: center;
-		        -ms-align-items: center;
-		        align-items: center;
-		        width: 100vw;
-		        height: 100vh;
-		        padding: 0 40px;
-		        -webkit-box-sizing: border-box;
-		        -moz-box-sizing: border-box;
-		        box-sizing: border-box;
-		        font-size: 6vw;
-		        color: #efbb35;
-		        overflow: hidden
+		@media screen and (max-width:1023px) {
+		    body, html{
+		    	overflow: initial;
 		    }
-		    .middle,
-		    .top,
-		    .greeting,
-		    .popUp {
-		        display: none
+		    footer{
+		    	display: none;
+		    }
+		    .middle__item,
+		    .middle__item:not(.opened) .middle__wrap{
+		    	max-height: initial;
+		    	height: auto !important;
+		    }
+		    .middle__wrap{
+		    	opacity: 1;
+
+		    	padding-bottom: 20px;
+		    }
+		    .cont_wr__item p{
+		    	width: 100%;
+		    	padding: 0 20px;
+
+		    	-webkit-box-sizing: border-box;
+		    	-moz-box-sizing: border-box;
+		    	box-sizing: border-box;
+		    }
+		    .middle__close{
+		    	display: none;
+		    }
+		    .top__bold{
+		    	font-size: 50px;
+		    }
+		    .top__text{
+		    	font-size: 22px;
+		    }
+		    .middle__link{
+		    	text-decoration: underline;
+		    	font-weight: normal;
+
+		    	padding-bottom: 20px;
+		    }
+		    #whyThis,
+		    #whyThis + .middle__img_wr,
+		    .popUp{
+		    	display: none;
 		    }
 		}
 	</style>
@@ -621,21 +640,6 @@
 				<a href="#" class="middle__close">Got it!</a>
 			</li>
 			<li class="middle__item">
-				<a class="middle__link" id="feedback" href="#">Feedback and support</a>
-				<ul class="middle__wrap cont_wr">
-					<li class="cont_wr__item">
-						<p>So, if you have wishes, suggestions or just want to thank me, write me down it here: <a class="in_text_link" href="mailto:RomanistHere@gmail.com">RomanistHere@gmail.com</a>.</p>
-					</li>
-					<li class="cont_wr__item">
-						<p>You could also make further development possible and faster by sending me what you think my work worth is: WM Z167685930722, <a class="in_text_link" target="_blank" rel="noreferrer" href="https://money.yandex.ru/to/410019187512228">YM</a>  410019187512228.</p>
-					</li>
-					<li class="cont_wr__item">
-						<p>Important thing! I could not test PopUpOFF everywhere, so if you think you found website where it has to work but it isn't, please, write right to <a class="in_text_link" href="mailto:RomanistHere@gmail.com">me</a> - it will help a lot.</p>
-					</li>
-				</ul>
-				<a href="#" class="middle__close">Got it!</a>
-			</li>
-			<li class="middle__item">
 				<a class="middle__link" id="future" href="#">Future features</a>
 				<ul class="middle__wrap cont_wr">
 					<li class="cont_wr__item">
@@ -654,6 +658,21 @@
 					</li>
 					<li class="cont_wr__item">
 						<p>Maybe later some help for mobile phones.</p>
+					</li>
+				</ul>
+				<a href="#" class="middle__close">Got it!</a>
+			</li>
+			<li class="middle__item">
+				<a class="middle__link" id="feedback" href="#">Feedback and support</a>
+				<ul class="middle__wrap cont_wr">
+					<li class="cont_wr__item">
+						<p>So, if you have wishes, suggestions or just want to thank me, write me down it here: <a class="in_text_link" href="mailto:RomanistHere@gmail.com">RomanistHere@gmail.com</a>.</p>
+					</li>
+					<li class="cont_wr__item">
+						<p>You could also make further development possible and faster by sending me what you think my work worth is: WM Z167685930722, <a class="in_text_link" target="_blank" rel="noreferrer" href="https://money.yandex.ru/to/410019187512228">YM</a>  410019187512228.</p>
+					</li>
+					<li class="cont_wr__item">
+						<p>Important thing! I could not test PopUpOFF everywhere, so if you think you found website where it has to work but it isn't, please, write right to <a class="in_text_link" href="mailto:RomanistHere@gmail.com">me</a> - it will help a lot.</p>
 					</li>
 				</ul>
 				<a href="#" class="middle__close">Got it!</a>
@@ -726,150 +745,173 @@
 	<p class="greeting">
 		Thank you for installing<3. Help me to make internet better place! If you like my extension, feel free to share it!
 	</p>
-	<div class="mobile">
-		I'd recomend you to visit this website again from PC browser!
-	</div>
 	<script>
-		var _gaq = _gaq || [];
-		_gaq.push(['_setAccount', 'UA-138501898-2']);
-		_gaq.push(['_trackPageview']);
+		let curScreenWeidth = window.screen.width;
+		if (curScreenWeidth > 1023) {
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-138501898-2']);
+			_gaq.push(['_trackPageview']);
 
-		(function() {
-		  var ga = document.createElement('script');
-		  ga.type = 'text/javascript';
-		  ga.async = true;
-		  ga.src = 'https://ssl.google-analytics.com/ga.js';
-		  var s = document.getElementsByTagName('script')[0];
-		  s.parentNode.insertBefore(ga, s);
-		})();
-	</script>
-	<script>
-		function setHeights() {
-			let middleWrap = document.querySelectorAll(".middle__wrap:not(.middle__img_wr)");
-			middleWrap.forEach(function(element) {
-				let sumOfChildsHeights = 0;
-				for (var i = 0; i < element.children.length; i++) {
-				    sumOfChildsHeights = sumOfChildsHeights + element.children[i].offsetHeight;
-				}
-				element.style.height = sumOfChildsHeights + 'px';
+			(function() {
+			  var ga = document.createElement('script');
+			  ga.type = 'text/javascript';
+			  ga.async = true;
+			  ga.src = 'https://ssl.google-analytics.com/ga.js';
+			  var s = document.getElementsByTagName('script')[0];
+			  s.parentNode.insertBefore(ga, s);
+			})();
+
+			function setHeights() {
+				let middleWrap = document.querySelectorAll(".middle__wrap:not(.middle__img_wr)");
+				middleWrap.forEach(function(element) {
+					let sumOfChildsHeights = 0;
+					for (var i = 0; i < element.children.length; i++) {
+					    sumOfChildsHeights = sumOfChildsHeights + element.children[i].offsetHeight;
+					}
+					element.style.height = sumOfChildsHeights + 'px';
+				});
+				let middleImgWrap = document.querySelector(".middle__img_wr");
+				let sumOfChildsHeights = middleImgWrap.children[0].children[0].offsetHeight;
+				middleImgWrap.style.height = sumOfChildsHeights + 'px';
+			}
+
+			setHeights();
+			window.addEventListener('resize', setHeights);
+
+			let dom_observer = new MutationObserver(setHeights);
+			dom_observer.observe(document.documentElement, { 
+				childList: true, 
+				subtree: true,
+				characterData: true
 			});
-			let middleImgWrap = document.querySelector(".middle__img_wr");
-			let sumOfChildsHeights = middleImgWrap.children[0].children[0].offsetHeight;
-			middleImgWrap.style.height = sumOfChildsHeights + 'px';
-		}
+			// handlers
+			let triggerLink = document.querySelectorAll(".middle__link");
 
-		setHeights();
-		window.addEventListener('resize', setHeights);
+			triggerLink.forEach(function(element) {
+			    element.addEventListener("click", function(e) {
+			    	_gaq.push(['_trackEvent', 'section_clicked', e.target.id]);
+			    	e.preventDefault();
+			        this.classList.add('clicked');
+			        this.parentNode.classList.toggle('opened');
+			        this.parentNode.parentNode.classList.toggle('condition');
+			    });
+			});
 
-		let dom_observer = new MutationObserver(setHeights);
-		dom_observer.observe(document.documentElement, { 
-			childList: true, 
-			subtree: true,
-			characterData: true
-		});
-	</script>
-	<script>
-		// handlers
-		let triggerLink = document.querySelectorAll(".middle__link");
+			let imgPopUp = document.querySelector(".popUp__img");
 
-		triggerLink.forEach(function(element) {
-		    element.addEventListener("click", function(e) {
-		    	_gaq.push(['_trackEvent', 'section_clicked', e.target.id]);
+			let imgClick = document.querySelectorAll(".imgClick");
+			imgClick.forEach(function(element) {
+			    element.addEventListener("click", function(e) {
+			    	e.preventDefault();
+			    	imgPopUp.src = e.target.src;
+			    	let imgText = e.target.getAttribute('data-desc');
+			    	document.querySelector('.popUp__text').innerHTML = imgText;
+			        document.querySelector(".popUp").classList.add("show");
+			        _gaq.push(['_trackEvent', 'image_clicked', imgPopUp.src]);
+			    });
+			});
+
+			let imgClose = document.querySelector(".popUp__close");
+
+		    imgClose.addEventListener("click", function(e) {
 		    	e.preventDefault();
-		        this.classList.add('clicked');
-		        this.parentNode.classList.toggle('opened');
-		        this.parentNode.parentNode.classList.toggle('condition');
-		    });
-		});
+		        document.querySelector(".popUp").classList.add("hide");
+		        setTimeout(function() {
+		        	document.querySelector(".popUp").classList.remove("show");
+		        	document.querySelector(".popUp").classList.remove("hide");
+		        }, 1000);
+			});
 
-		let imgPopUp = document.querySelector(".popUp__img");
+			let closeSection = document.querySelectorAll(".middle__close");
 
-		let imgClick = document.querySelectorAll(".imgClick");
-		imgClick.forEach(function(element) {
-		    element.addEventListener("click", function(e) {
+			closeSection.forEach(function(element) {
+			    element.addEventListener("click", function(e) {
+			    	e.preventDefault();
+			    	this.parentNode.classList.toggle('opened');
+			        this.parentNode.parentNode.classList.toggle('condition');
+			        triggerLink.forEach(function(element) {
+			        	element.classList.remove('clicked');
+			        });
+			        _gaq.push(['_trackEvent', 'close_section', 'close_section']);
+			    });
+			});
+
+			document.querySelector('.top-interactive_1').addEventListener('click', function(e) {
+				e.preventDefault();
+				this.classList.add('hide');
+				document.querySelector('.top-interactive_2').classList.add('show');
+				_gaq.push(['_trackEvent', 'top_hidden_click', '1']);
+			});
+
+			document.querySelector('.top-interactive_2').addEventListener('click', function(e) {
+				e.preventDefault();
+				this.classList.add('hide');
+				document.querySelector('.top__text').classList.add('show');
+				_gaq.push(['_trackEvent', 'top_hidden_click', '2']);
+			});
+
+			document.querySelector('.logo').addEventListener('click', function(e) {
+				_gaq.push(['_trackEvent', 'logo_clicked', 'logo']);
+			});
+
+			document.querySelector('.closeVideo').addEventListener('click', function() {
+				let videoSRC = document.querySelector('.middle__video').getAttribute('src');
+				document.querySelector('.middle__video').setAttribute('src', videoSRC);
+			});
+
+			if (window.location.href.indexOf("how_to_use") != -1) {
+				document.querySelector('.middle__item:nth-child(3) .middle__link').classList.add('clicked');
+		        document.querySelector('.middle__item:nth-child(3) .middle__link').parentNode.classList.toggle('opened');
+		        document.querySelector('.middle__item:nth-child(3) .middle__link').parentNode.parentNode.classList.toggle('condition');
+			}
+
+			if (window.location.href.indexOf("greetings") != -1) {
+				const $greeting = document.querySelector('.greeting')
+				$greeting.classList.add('greeting-vis');
+				setTimeout(function() {
+					$greeting.classList.add('greeting-hid');
+				}, 10000);
+			}
+			
+			console.log('%c Hi there!', 'color: #efbb35');
+			console.log(' ');
+			console.log('%c What do u want to find?', 'color: #efbb35');
+			console.log(' ');
+			console.log('%c There are few hidden possibilities at this website. Can you find them?', 'color: #efbb35');
+			console.log(' ');
+			console.log('%c If you have errors within console, disable adblock or hide network errors. Theese are not mine:)', 'color: #efbb35');
+			console.log(' ');
+			console.log('%c Have a good day!', 'color: #efbb35');
+		} else {
+			// mobiles 
+			const $triggerLink = document.querySelectorAll(".middle__link");
+
+			$triggerLink.forEach(function(element) {
+			    element.addEventListener("click", function(e) {
+			    	e.preventDefault();
+			    });
+			});
+
+			document.querySelector('.top__title').addEventListener("click", function(e) {
 		    	e.preventDefault();
-		    	imgPopUp.src = e.target.src;
-		    	let imgText = e.target.getAttribute('data-desc');
-		    	document.querySelector('.popUp__text').innerHTML = imgText;
-		        document.querySelector(".popUp").classList.add("show");
-		        _gaq.push(['_trackEvent', 'image_clicked', imgPopUp.src]);
 		    });
-		});
 
-		let imgClose = document.querySelector(".popUp__close");
-
-	    imgClose.addEventListener("click", function(e) {
-	    	e.preventDefault();
-	        document.querySelector(".popUp").classList.add("hide");
-	        setTimeout(function() {
-	        	document.querySelector(".popUp").classList.remove("show");
-	        	document.querySelector(".popUp").classList.remove("hide");
-	        }, 1000);
-		});
-
-		let closeSection = document.querySelectorAll(".middle__close");
-
-		closeSection.forEach(function(element) {
-		    element.addEventListener("click", function(e) {
+			document.querySelector('.top__bold').addEventListener("click", function(e) {
 		    	e.preventDefault();
-		    	this.parentNode.classList.toggle('opened');
-		        this.parentNode.parentNode.classList.toggle('condition');
-		        triggerLink.forEach(function(element) {
-		        	element.classList.remove('clicked');
-		        });
-		        _gaq.push(['_trackEvent', 'close_section', 'close_section']);
 		    });
-		});
-	</script>
-	<script>		
-		document.querySelector('.top-interactive_1').addEventListener('click', function(e) {
-			e.preventDefault();
-			this.classList.add('hide');
-			document.querySelector('.top-interactive_2').classList.add('show');
-			_gaq.push(['_trackEvent', 'top_hidden_click', '1']);
-		});
-
-		document.querySelector('.top-interactive_2').addEventListener('click', function(e) {
-			e.preventDefault();
-			this.classList.add('hide');
-			document.querySelector('.top__text').classList.add('show');
-			_gaq.push(['_trackEvent', 'top_hidden_click', '2']);
-		});
-
-		document.querySelector('.logo').addEventListener('click', function(e) {
-			_gaq.push(['_trackEvent', 'logo_clicked', 'logo']);
-		});
-
-		document.querySelector('.closeVideo').addEventListener('click', function() {
-			let videoSRC = document.querySelector('.middle__video').getAttribute('src');
-			document.querySelector('.middle__video').setAttribute('src', videoSRC);
-		});
-	</script>
-	<script>
-		if (window.location.href.indexOf("how_to_use") != -1) {
-			document.querySelector('.middle__item:nth-child(3) .middle__link').classList.add('clicked');
-	        document.querySelector('.middle__item:nth-child(3) .middle__link').parentNode.classList.toggle('opened');
-	        document.querySelector('.middle__item:nth-child(3) .middle__link').parentNode.parentNode.classList.toggle('condition');
 		}
-
-		if (window.location.href.indexOf("greetings") != -1) {
-			const $greeting = document.querySelector('.greeting')
-			$greeting.classList.add('greeting-vis');
-			setTimeout(function() {
-				$greeting.classList.add('greeting-hid');
-			}, 10000);
+		// temporarily version of responsive
+		let oldScreenWidth = curScreenWeidth;
+		window.addEventListener('resize', checkWidth);
+		function checkWidth() {
+			curScreenWeidth = window.screen.width;
+			if (((oldScreenWidth < 1024) && (curScreenWeidth >= 1024)) ||
+				((oldScreenWidth >= 1024) && (curScreenWeidth < 1024)) ) {
+				_gaq.push(['_trackEvent', 'mad_changings_of_screen', 'why?']);
+				location.reload();
+			}
+			oldScreenWidth = curScreenWeidth;
 		}
-	</script>
-	<script>
-		console.log('%c Hi there!', 'color: #efbb35');
-		console.log(' ');
-		console.log('%c What do u want to find?', 'color: #efbb35');
-		console.log(' ');
-		console.log('%c There are few hidden possibilities at this website. Can you find them?', 'color: #efbb35');
-		console.log(' ');
-		console.log('%c If you have errors within console, disable adblock or hide network errors. Theese are not mine:)', 'color: #efbb35');
-		console.log(' ');
-		console.log('%c Have a good day!', 'color: #efbb35');
 	</script>
 </body>
 </html>
