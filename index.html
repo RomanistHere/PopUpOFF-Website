@@ -422,24 +422,36 @@
 		    transition: all ease .5s .2s
 		}
 
-		.browser_text{
-			position: absolute;
-
-			left: 50%;
-			bottom: 10px;
-			transform: translateX(-50%);
-
-			opacity: 0;
-			z-index: -10;
-		}
-
-		.browser_text-show{
-			opacity: 1;
-			z-index: 1;
-		}
-
 		.mobile {
 		    display: none
+		}
+
+		.greeting {
+			position: absolute;
+
+			bottom: 20px;
+			left: 0;
+			right: 0;
+			padding: 0 50px;
+	
+			text-align: center;
+
+			opacity: 0;
+			z-index: -1;
+		}
+
+		.greeting-vis {
+			opacity: 1;
+			z-index: 1;
+
+			transition: all ease 1s 3s;
+		}
+
+		.greeting-hid {
+			opacity: 0;
+			z-index: -1;
+
+			transition: all ease 2s;
 		}
 
 		@media screen and (max-width:1601px) {
@@ -520,7 +532,7 @@
 			<li class="middle__item">
 				<a class="middle__link" id="video" href="#">Video showcase</a>
 				<div class="middle__wrap cont_wr">
-					<iframe title="video showcase" class="middle__video" width="560" height="315" src="https://www.youtube.com/embed/dMLBZaGud7g?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					<iframe title="video showcase" class="middle__video" width="560" height="315" src="https://www.youtube-nocookie.com/embed/dMLBZaGud7g?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 				</div>
 				<a href="#" class="middle__close middle__close-pad_top closeVideo">Got it!</a>
 			</li>
@@ -708,12 +720,12 @@
 		</div>
 		<p class="popUp__text"></p>
 	</div>
+	<p class="greeting">
+		Thank you for installing<3. Help me to make internet better place! If you like my extension, feel free to share it!
+	</p>
 	<div class="mobile">
 		I'd recomend you to visit this website again from PC browser!
 	</div>
-	<p class="browser_text">
-		Visit this website with Chrome for better experience!
-	</p>
 	<script>
 		var _gaq = _gaq || [];
 		_gaq.push(['_setAccount', 'UA-138501898-2']);
@@ -754,6 +766,7 @@
 		});
 	</script>
 	<script>
+		// handlers
 		let triggerLink = document.querySelectorAll(".middle__link");
 
 		triggerLink.forEach(function(element) {
@@ -804,7 +817,8 @@
 		        _gaq.push(['_trackEvent', 'close_section', 'close_section']);
 		    });
 		});
-
+	</script>
+	<script>		
 		document.querySelector('.top-interactive_1').addEventListener('click', function(e) {
 			e.preventDefault();
 			this.classList.add('hide');
@@ -827,11 +841,20 @@
 			let videoSRC = document.querySelector('.middle__video').getAttribute('src');
 			document.querySelector('.middle__video').setAttribute('src', videoSRC);
 		});
-
+	</script>
+	<script>
 		if (window.location.href.indexOf("how_to_use") != -1) {
 			document.querySelector('.middle__item:nth-child(3) .middle__link').classList.add('clicked');
 	        document.querySelector('.middle__item:nth-child(3) .middle__link').parentNode.classList.toggle('opened');
 	        document.querySelector('.middle__item:nth-child(3) .middle__link').parentNode.parentNode.classList.toggle('condition');
+		}
+
+		if (window.location.href.indexOf("greetings") != -1) {
+			const $greeting = document.querySelector('.greeting')
+			$greeting.classList.add('greeting-vis');
+			setTimeout(function() {
+				$greeting.classList.add('greeting-hid');
+			}, 10000);
 		}
 	</script>
 	<script>
@@ -839,7 +862,9 @@
 		console.log(' ');
 		console.log('%c What do u want to find?', 'color: #efbb35');
 		console.log(' ');
-		console.log('%c These errors are not mine :)', 'color: #efbb35');
+		console.log('%c There are few hidden possibilities at this website. Can you find them?', 'color: #efbb35');
+		console.log(' ');
+		console.log('%c If you have errors within console, disable adblock or hide network errors. Theese are not mine:)', 'color: #efbb35');
 		console.log(' ');
 		console.log('%c Have a good day!', 'color: #efbb35');
 	</script>
