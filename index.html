@@ -21,7 +21,17 @@
 			<li class="middle__item">
 				<a class="middle__link" id="video" href="#">Video showcase</a>
 				<div class="middle__wrap cont_wr">
-					<iframe title="video showcase" class="middle__video" width="560" height="315" src="https://www.youtube-nocookie.com/embed/dMLBZaGud7g?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					<iframe 
+						title="video showcase" 
+						class="middle__video" 
+						width="560" 
+						height="315" 
+						src="https://www.youtube-nocookie.com/embed/dMLBZaGud7g?rel=0" 
+						frameborder="0" 
+						allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+						allowfullscreen
+						loading="lazy"
+					></iframe>
 				</div>
 				<a href="#" class="middle__close middle__close-pad_top closeVideo">Got it!</a>
 			</li>
@@ -30,17 +40,17 @@
 				<ul class="middle__wrap cont_wr middle__img_wr">
 					<li class="cont_wr__item cont_wr__img_item">
 						<a title="Screen without extensions. Click to zoom." class="imgClick" href="#">
-							<img data-desc="This is how typical site I visit looks like. This screen we use clean chrome without any extensions." class="cont_wr__image" src="images/3.jpg" alt="image example">
+							<img data-desc="This is how typical site I visit looks like. This screen we use clean chrome without any extensions." class="cont_wr__image" src="images/3.jpg" alt="image example" loading="lazy">
 						</a>
 					</li>
 					<li class="cont_wr__item cont_wr__img_item">
 						<a title="Screen with top 10 extensions from Store. Click to zoom." class="imgClick" href="#">
-							<img data-desc="This is how typical site I visit looks like. This screen we use all extensions I could find for blocking ads and popups." class="cont_wr__image" src="images/4.jpg" alt="image example">
+							<img data-desc="This is how typical site I visit looks like. This screen we use all extensions I could find for blocking ads and popups." class="cont_wr__image" src="images/4.jpg" alt="image example" loading="lazy">
 						</a>
 					</li>
 					<li class="cont_wr__item cont_wr__img_item">
 						<a title="Screen with PopUpOFF. Click to zoom." class="imgClick" href="#">
-							<img data-desc="This is how typical site I visit looks like. This screen we use PopUpOFF. Help comforting yourself!" class="cont_wr__image" src="images/5.jpg" alt="image example">
+							<img data-desc="This is how typical site I visit looks like. This screen we use PopUpOFF. Help comforting yourself!" class="cont_wr__image" src="images/5.jpg" alt="image example" loading="lazy">
 						</a>
 					</li>
 				</ul>
@@ -57,6 +67,9 @@
 					</li>
 					<li class="cont_wr__item">
 						<p>Easy mode works little bit slower. <a class="in_text_link" target="_blank" rel="noreferrer" href="https://github.com/RomanistHere/PopUpOFF">Tech info why.</a> Do exactly the same thing as "Hard" one, except it leaves navigation bars/sticky headers, so you can change topic, etc.</p>
+					</li>
+					<li class="cont_wr__item">
+						<p>You can activate one of them by pressing <span class="cont_wr-col">Alt + x</span>. Disabled by default. Enable at options page.</p>
 					</li>
 					<li class="cont_wr__item">
 						<p>Last one is "I JUST WANT TO READ!" - If nothing else helps. It disables all things that can interrupt you from reading. Works for current page until u reload it or leave in any way.</p>
@@ -205,7 +218,7 @@
 			</div>
 		</a>
 		<div class="popUp__wrap">
-			<img class="popUp__img" src="images/3.jpg" alt="image example">
+			<img class="popUp__img" src="images/3.jpg" alt="image example" loading="lazy">
 		</div>
 		<p class="popUp__text"></p>
 	</div>

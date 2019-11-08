@@ -41,7 +41,7 @@
 .top-interactive_1:hover,
 .top-interactive_2.hide,
 .top-interactive_2:hover {
-    color: brown
+    color: #6bb756
 }
 
 .top__text {
@@ -53,7 +53,7 @@
 
 .top__text::selection,
 .in_text_link::selection {
-    color: brown
+    color: #6bb756
 }
 
 .show.top__text {
@@ -122,7 +122,7 @@ br::selection,
 
 .middle__close::selection,
 .middle__link::selection {
-    color: brown
+    color: #6bb756
 }
 
 .middle__link.clicked {
@@ -200,6 +200,10 @@ br::selection,
 .cont_wr__item p::selection {
     color: #efbb35;
     background-color: #222
+}
+
+.cont_wr-col{
+    color: #efbb35;
 }
 
 .popUp__wrap {
@@ -339,7 +343,7 @@ br::selection,
 }
 
 .close_label::selection {
-    color: brown
+    color: #6bb756
 }
 
 .cont_wr__image::selection {
@@ -348,7 +352,7 @@ br::selection,
 
 .popUp__img::selection,
 .popUp__text::selection {
-    background-color: brown
+    background-color: #6bb756
 }
 
 .show .popUp__text {
