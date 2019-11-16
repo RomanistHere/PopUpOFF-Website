@@ -206,6 +206,11 @@ br::selection,
     color: #efbb35;
 }
 
+.cont_wr-col::selection{
+    color: #f9ffee;
+    background-color: #222
+}
+
 .popUp__wrap {
     position: absolute;
     width: 100%;
@@ -399,7 +404,7 @@ br::selection,
 
 .solo_link{
     display: block;
-    
+
     padding-bottom: 20px;
 }
 
