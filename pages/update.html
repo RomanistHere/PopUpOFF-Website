@@ -53,70 +53,7 @@
 		</div>
 	</section>
 	<script>
-		var _gaq = _gaq || [];
-		_gaq.push(['_setAccount', 'UA-138501898-2']);
-		_gaq.push(['_trackPageview']);
-
-		(function() {
-		  var ga = document.createElement('script');
-		  ga.type = 'text/javascript';
-		  ga.async = true;
-		  ga.src = 'https://ssl.google-analytics.com/ga.js';
-		  var s = document.getElementsByTagName('script')[0];
-		  s.parentNode.insertBefore(ga, s);
-		})();
-
-		let state = {
-			lang: 'eng',
-			rus: [
-				'Привет, как насчёт небольшой порции полезных обновлений?',
-				'Нового в обновлении:',
-				'Теперь ты можешь активировать один из модов нажатием на клавиатуре <span class="updates-col">Alt + x</span>. По умолчанию эта функция выключена. Включить можно на <a class="in_text_link optPage" href="#">странице настроек</a>. Буду благодарен обратной связи после использования этой функции. Нужна ли комбинация для второго мода или одного хватает? Стоит ли добавить самостоятельный выбор комбинации?',
-				'Что бы нам было проще общаться, я завёл аккаунт в <a href="https://twitter.com/RomanistHere" target="_blank" class="in_text_link">твиттере</a> и буду там писать о будущих обновлениях и устраивать обсуждения - ты сможешь напрямую влиять на дальнейшее развитие!',
-				'Вдобавок, по иконке расширения теперь можно увидеть какой мод активен:',
-				'Спасибо за помощь в моём стремлении сделать интернет слегка лучше:)',
-			],
-			eng: [
-				`Hey there, hope you're doing fine. I have some useful updates for you.`,
-				`Updates briefly:`,
-				`From now on, you can use a keyboard shortcut to activate one mode - you need to enable it first <a class="in_text_link optPage" href="#">at options page</a>. Command is <span class="updates-col">Alt + x</span> - after you use it for some period of time, please let me know, what do you think, would it better to make shortcut command toggle mode(activate/deactivate) instead. Do you need one more shortcut combination for another mode or you fine with favourite one? Would it be better for you to set up your custom key combination? I would like to hear you thoughts about it!`,
-				`And to make it easier for you, I started <a href="https://twitter.com/RomanistHere" target="_blank" class="in_text_link">twitter</a>. I am going to write about future updates and start discussions so you can be part of all further developments. A lot depends on your opinion!`,
-				`Also, now you can see what mode is enabled by looking at the icon. Helps with new keyboard shortcut feature:`,
-				`Thank you for helping me to make the internet a better place to be!`
-			],
-			esp: [
-				`Hola, espero que estés bien. Tengo algunas actualizaciones útiles para ti.`,
-				`Puesta al día:`,
-				`A partir de ahora, puede usar un método abreviado de teclado para activar un modo. Primero debe habilitarlo en la <a class="in_text_link optPage" href="#">página de opciones</a>. El comando es <span class="updates-col">Alt + x</span>. Después de usarlo durante un período de tiempo podrías decirme por favor: ¿necesita una combinación de acceso directo más para otro modo o está bien con el favorito? ¿Sería mejor para ti configurar tu combinación de teclas personalizada? ¡Me gustaría escuchar tus pensamientos al respecto!`,
-				`Y para que te sea más fácil, empecé a <a href="https://twitter.com/RomanistHere" target="_blank" class="in_text_link">twitter</a>. Voy a escribir sobre actualizaciones futuras y comenzar discusiones para que pueda ser parte de todos los desarrollos posteriores. ¡Mucho depende de tu opinión!`,
-				`Además, ahora puede ver qué modo está habilitado mirando el icono:`,
-
-				`¡Gracias por ayudarme a hacer Internet un lugar mejor para estar!`
-			],
-		};
-
-		document.querySelectorAll('.updates__lang').forEach(node => node.addEventListener('click', (e) => {
-			e.preventDefault();
-			document.querySelector('.updates-col2').classList.remove('updates-col2');
-			node.classList.add('updates-col2');
-			const newLang = node.getAttribute('data-lang');
-			if (newLang !== state.lang) {
-				document.querySelectorAll('.chLang').forEach((node, index) => node.innerHTML = state[newLang][index]);
-				state = { ...state, lang: newLang };
-				setOptHandler();
-				_gaq.push(['_trackEvent', 'newLang', newLang]);
-			}
-		}));
-
-		const setOptHandler = () => {
-			document.querySelector('.optPage').addEventListener('click', e => {
-				e.preventDefault();
-				const event = new Event("openOptPage");
-	  			document.dispatchEvent(event);
-	  			_gaq.push(['_trackEvent', 'openOptPage']);
-			});
-		};
-		setOptHandler();
+		var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-138501898-2"]),_gaq.push(["_trackPageview"]),function(){var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.src="https://ssl.google-analytics.com/ga.js";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)}();let state={lang:"eng",rus:["Привет, как насчёт небольшой порции полезных обновлений?","Нового в обновлении:",'Теперь ты можешь активировать один из модов нажатием на клавиатуре <span class="updates-col">Alt + x</span>. По умолчанию эта функция выключена. Включить можно на <a class="in_text_link optPage" href="#">странице настроек</a>. Буду благодарен обратной связи после использования этой функции. Нужна ли комбинация для второго мода или одного хватает? Стоит ли добавить самостоятельный выбор комбинации?','Что бы нам было проще общаться, я завёл аккаунт в <a href="https://twitter.com/RomanistHere" target="_blank" class="in_text_link">твиттере</a> и буду там писать о будущих обновлениях и устраивать обсуждения - ты сможешь напрямую влиять на дальнейшее развитие!',"Вдобавок, по иконке расширения теперь можно увидеть какой мод активен:","Спасибо за помощь в моём стремлении сделать интернет слегка лучше:)"],eng:["Hey there, hope you're doing fine. I have some useful updates for you.","Updates briefly:",'From now on, you can use a keyboard shortcut to activate one mode - you need to enable it first <a class="in_text_link optPage" href="#">at options page</a>. Command is <span class="updates-col">Alt + x</span> - after you use it for some period of time, please let me know, what do you think, would it better to make shortcut command toggle mode(activate/deactivate) instead. Do you need one more shortcut combination for another mode or you fine with favourite one? Would it be better for you to set up your custom key combination? I would like to hear you thoughts about it!','And to make it easier for you, I started <a href="https://twitter.com/RomanistHere" target="_blank" class="in_text_link">twitter</a>. I am going to write about future updates and start discussions so you can be part of all further developments. A lot depends on your opinion!',"Also, now you can see what mode is enabled by looking at the icon. Helps with new keyboard shortcut feature:","Thank you for helping me to make the internet a better place to be!"],esp:["Hola, espero que estés bien. Tengo algunas actualizaciones útiles para ti.","Puesta al día:",'A partir de ahora, puede usar un método abreviado de teclado para activar un modo. Primero debe habilitarlo en la <a class="in_text_link optPage" href="#">página de opciones</a>. El comando es <span class="updates-col">Alt + x</span>. Después de usarlo durante un período de tiempo podrías decirme por favor: ¿necesita una combinación de acceso directo más para otro modo o está bien con el favorito? ¿Sería mejor para ti configurar tu combinación de teclas personalizada? ¡Me gustaría escuchar tus pensamientos al respecto!','Y para que te sea más fácil, empecé a <a href="https://twitter.com/RomanistHere" target="_blank" class="in_text_link">twitter</a>. Voy a escribir sobre actualizaciones futuras y comenzar discusiones para que pueda ser parte de todos los desarrollos posteriores. ¡Mucho depende de tu opinión!',"Además, ahora puede ver qué modo está habilitado mirando el icono:","¡Gracias por ayudarme a hacer Internet un lugar mejor para estar!"]};document.querySelectorAll(".updates__lang").forEach(e=>e.addEventListener("click",t=>{t.preventDefault(),document.querySelector(".updates-col2").classList.remove("updates-col2"),e.classList.add("updates-col2");const a=e.getAttribute("data-lang");a!==state.lang&&(document.querySelectorAll(".chLang").forEach((e,t)=>e.innerHTML=state[a][t]),state={...state,lang:a},setOptHandler(),_gaq.push(["_trackEvent","newLang",a]))}));const setOptHandler=()=>{document.querySelector(".optPage").addEventListener("click",e=>{e.preventDefault();const t=new Event("openOptPage");document.dispatchEvent(t),_gaq.push(["_trackEvent","openOptPage"])})};setOptHandler();
 	</script>
 </body>
 </html>
