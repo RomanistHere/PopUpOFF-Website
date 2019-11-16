@@ -58,7 +58,9 @@
 }
 
 .updates__item::selection,
-.updates__item span::selection,
+.updates__text::selection,
+.updates__lang::selection,
+.updates__lang_wr::selection,
 .updates__im_capt::selection,
 .updates__list_title::selection {
     color: #efbb35;
@@ -81,6 +83,39 @@
 }
 
 .updates-col2,
-.updates-col2:hover{
+.updates-col2:hover {
     color: #6bb756;
+}
+
+.updates-col::selection,
+.updates-col2::selection {
+	color: #f9ffee;
+}
+
+@media screen and (max-height:620px) {
+	body, html {
+		height: auto;
+		overflow: auto;
+	}
+
+	.updates {
+		padding: 50px 0;
+	}
+}
+
+@media screen and (max-width:1023px) {
+	body, html {
+		height: auto;
+		overflow: auto;
+	}
+
+	.updates {
+		padding: 20px;
+	}
+
+	.updates__lang_wr {
+		padding-top: 50px;
+
+		position: static;
+	}
 }
