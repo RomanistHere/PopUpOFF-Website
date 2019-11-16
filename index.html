@@ -69,7 +69,7 @@
 						<p>Easy mode works little bit slower. <a class="in_text_link" target="_blank" rel="noreferrer" href="https://github.com/RomanistHere/PopUpOFF">Tech info why.</a> Do exactly the same thing as "Hard" one, except it leaves navigation bars/sticky headers, so you can change topic, etc.</p>
 					</li>
 					<li class="cont_wr__item">
-						<p>You can activate one of them by pressing <span class="cont_wr-col">Alt + x</span>. Disabled by default. Enable at options page.</p>
+						<p>You can activate one of them by pressing <span class="cont_wr-col">Alt + x</span>. Disabled by default. Enable at <a class="in_text_link optPage" href="#">options page</a>.</p>
 					</li>
 					<li class="cont_wr__item">
 						<p>Last one is "I JUST WANT TO READ!" - If nothing else helps. It disables all things that can interrupt you from reading. Works for current page until u reload it or leave in any way.</p>
@@ -90,7 +90,7 @@
 						<p>I havent found any extension that could help me here. So algorithm was easy. Face problem -> check is there existing solution -> check if you able to resolve it -> do it. So did I.</p>
 					</li>
 					<li class="cont_wr__item">
-						<p>I cooperate with noone. To be honest I collecting some stats. Not sites, you visit, just what features are used more and what are less to understand better what ones are needed. You can help me more by sending your feedback to <a class="in_text_link" href="mailto:RomanistHere@gmail.com">email</a>.</p>
+						<p>I cooperate with noone. To be honest I collecting some stats. Not sites, you visit, just what features are used more and what are less to understand better what ones are needed. You can help me more by sending your feedback to <a class="in_text_link" href="mailto:RomanistHere@gmail.com">email</a> or in <a href="https://twitter.com/RomanistHere" target="_blank" class="in_text_link">twitter</a>.</p>
 					</li>
 					<li class="cont_wr__item">
 						<p>Feel free to use it!</p>
@@ -146,13 +146,22 @@
 				<a class="middle__link" id="feedback" href="#">Feedback and support</a>
 				<ul class="middle__wrap cont_wr">
 					<li class="cont_wr__item">
-						<p>So, if you have wishes, suggestions or just want to thank me, write me down it here: <a class="in_text_link" href="mailto:RomanistHere@gmail.com">RomanistHere@gmail.com</a>.</p>
+						<p>So, if you have wishes, suggestions or just want to thank me, write me down it here: <a class="in_text_link" href="mailto:RomanistHere@gmail.com">RomanistHere@gmail.com</a> or in <a href="https://twitter.com/RomanistHere" target="_blank" class="in_text_link">twitter</a>.</p>
 					</li>
 					<li class="cont_wr__item">
 						<p>You could also make further development possible and faster by sending me what you think my work worth is: WM Z167685930722, <a class="in_text_link" target="_blank" rel="noreferrer" href="https://money.yandex.ru/to/410019187512228">YM</a>  410019187512228.</p>
 					</li>
 					<li class="cont_wr__item">
 						<p>Important thing! I could not test PopUpOFF everywhere, so if you think you found website where it has to work but it isn't, please, write right to <a class="in_text_link" href="mailto:RomanistHere@gmail.com">me</a> - it will help a lot.</p>
+					</li>
+				</ul>
+				<a href="#" class="middle__close">Got it!</a>
+			</li>
+			<li class="middle__item">
+				<a class="middle__link" id="feedback" href="#">Updates</a>
+				<ul class="middle__wrap cont_wr">
+					<li class="cont_wr__item">
+						<a class="in_text_link solo_link" target="_blank" rel="noreferrer" href="https://romanisthere.github.io/PopUpOFF-Website/pages/update.html">Ongoing update</a>
 					</li>
 				</ul>
 				<a href="#" class="middle__close">Got it!</a>
@@ -380,6 +389,15 @@
 		    	e.preventDefault();
 		    });
 		}
+		const setOptHandler = () => {
+			document.querySelector('.optPage').addEventListener('click', e => {
+				e.preventDefault();
+				const event = new Event("openOptPage");
+	  			document.dispatchEvent(event);
+	  			_gaq.push(['_trackEvent', 'openOptPage']);
+			});
+		};
+		setOptHandler();
 		// temporarily version of responsive
 		let oldScreenWidth = curScreenWeidth;
 		window.addEventListener('resize', checkWidth);

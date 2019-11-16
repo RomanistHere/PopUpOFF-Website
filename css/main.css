@@ -397,6 +397,12 @@ br::selection,
 	transition: all ease 2s;
 }
 
+.solo_link{
+    display: block;
+    
+    padding-bottom: 20px;
+}
+
 @media screen and (max-width:1601px) {
     .top__text {
         padding-bottom: 20px
