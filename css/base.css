@@ -1,3 +1,4 @@
+/*// general css //*/
 body,
 html {
     position: relative;
@@ -47,4 +48,15 @@ ul {
     display: inline;
     text-decoration: underline;
     text-decoration-color: #efbb35;
+}
+
+.col_text{
+   color: #efbb35; 
+}
+
+/*// critical css // */
+
+.policy{
+    max-width: 1000px;
+    margin: 0 auto;
 }
