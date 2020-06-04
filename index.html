@@ -6,6 +6,10 @@
 	<meta name="Description" content="Chrome extension. Removes popups, overlays, cookie and 'please, disable adBlock' notifications with restrictions, another tools can not. Makes internet experience better.">
 	<meta name="google-site-verification" content="VOAqlvL1BbL_Glqy47fldDLcHlz8MjARlIfftmcdios" />
 	<link rel="shortcut icon" type="image/png" href="logo32.png"/>
+	<meta property="og:title" content="PopUpOFF"/>
+	<meta property="og:image" content="https://romanisthere.github.io/PopUpOFF-Website/images/logofull.png"/>
+	<meta property="og:description" content="Chrome extension. Improves the web. Removes and prevents popups, overlays and cookie notifications, other tools do not. Enjoy the original look of the internet."/>
+	<meta property="og:url" content="https://romanisthere.github.io/PopUpOFF-Website/" />
 	<link rel="stylesheet" href="css/base.css">
 	<link rel="stylesheet" href="css/main.css">
 	<link rel="stylesheet" href="css/main-non-crit.css" media="print" onload="this.media='all'">
@@ -163,15 +167,15 @@
 				</ul>
 				<a href="#" class="middle__close">Got it!</a>
 			</li>
-			<li class="middle__item">
-				<a class="middle__link" id="feedback" href="#">Updates</a>
+			<!-- <li class="middle__item">
+				<a class="middle__link" id="updates" href="#">Updates</a>
 				<ul class="middle__wrap cont_wr">
 					<li class="cont_wr__item">
 						<a class="in_text_link solo_link" target="_blank" rel="noreferrer" href="https://romanisthere.github.io/PopUpOFF-Website/pages/update.html">Ongoing update</a>
 					</li>
 				</ul>
 				<a href="#" class="middle__close">Got it!</a>
-			</li>
+			</li> -->
 		</ul>
 	</main>
 	<footer>
@@ -241,180 +245,7 @@
 		Thank you for installing<3. Help me to make internet better place! If you like my extension, feel free to share it!
 	</p>
 	<script>
-		let curScreenWeidth = window.screen.width;
-		if (curScreenWeidth > 1023) {
-			var _gaq = _gaq || [];
-			_gaq.push(['_setAccount', 'UA-138501898-2']);
-			_gaq.push(['_trackPageview']);
-
-			(function() {
-			  var ga = document.createElement('script');
-			  ga.type = 'text/javascript';
-			  ga.async = true;
-			  ga.src = 'https://ssl.google-analytics.com/ga.js';
-			  var s = document.getElementsByTagName('script')[0];
-			  s.parentNode.insertBefore(ga, s);
-			})();
-
-			function setHeights() {
-				let middleWrap = document.querySelectorAll(".middle__wrap:not(.middle__img_wr)");
-				middleWrap.forEach(function(element) {
-					let sumOfChildsHeights = 0;
-					for (var i = 0; i < element.children.length; i++) {
-					    sumOfChildsHeights = sumOfChildsHeights + element.children[i].offsetHeight;
-					}
-					element.style.height = sumOfChildsHeights + 'px';
-				});
-				let middleImgWrap = document.querySelector(".middle__img_wr");
-				let sumOfChildsHeights = middleImgWrap.children[0].children[0].offsetHeight;
-				middleImgWrap.style.height = sumOfChildsHeights + 'px';
-			}
-
-			setHeights();
-			window.addEventListener('resize', setHeights);
-
-			let dom_observer = new MutationObserver(setHeights);
-			dom_observer.observe(document.documentElement, { 
-				childList: true, 
-				subtree: true,
-				characterData: true
-			});
-			// handlers
-			let triggerLink = document.querySelectorAll(".middle__link");
-
-			triggerLink.forEach(function(element) {
-			    element.addEventListener("click", function(e) {
-			    	_gaq.push(['_trackEvent', 'section_clicked', e.target.id]);
-			    	e.preventDefault();
-			        this.classList.add('clicked');
-			        this.parentNode.classList.toggle('opened');
-			        this.parentNode.parentNode.classList.toggle('condition');
-			    });
-			});
-
-			let imgPopUp = document.querySelector(".popUp__img");
-
-			let imgClick = document.querySelectorAll(".imgClick");
-			imgClick.forEach(function(element) {
-			    element.addEventListener("click", function(e) {
-			    	e.preventDefault();
-			    	imgPopUp.src = e.target.src;
-			    	let imgText = e.target.getAttribute('data-desc');
-			    	document.querySelector('.popUp__text').innerHTML = imgText;
-			        document.querySelector(".popUp").classList.add("show");
-			        _gaq.push(['_trackEvent', 'image_clicked', imgPopUp.src]);
-			    });
-			});
-
-			let imgClose = document.querySelector(".popUp__close");
-
-		    imgClose.addEventListener("click", function(e) {
-		    	e.preventDefault();
-		        document.querySelector(".popUp").classList.add("hide");
-		        setTimeout(function() {
-		        	document.querySelector(".popUp").classList.remove("show");
-		        	document.querySelector(".popUp").classList.remove("hide");
-		        }, 1000);
-			});
-
-			let closeSection = document.querySelectorAll(".middle__close");
-
-			closeSection.forEach(function(element) {
-			    element.addEventListener("click", function(e) {
-			    	e.preventDefault();
-			    	this.parentNode.classList.toggle('opened');
-			        this.parentNode.parentNode.classList.toggle('condition');
-			        triggerLink.forEach(function(element) {
-			        	element.classList.remove('clicked');
-			        });
-			        _gaq.push(['_trackEvent', 'close_section', 'close_section']);
-			    });
-			});
-
-			document.querySelector('.top-interactive_1').addEventListener('click', function(e) {
-				e.preventDefault();
-				this.classList.add('hide');
-				document.querySelector('.top-interactive_2').classList.add('show');
-				_gaq.push(['_trackEvent', 'top_hidden_click', '1']);
-			});
-
-			document.querySelector('.top-interactive_2').addEventListener('click', function(e) {
-				e.preventDefault();
-				this.classList.add('hide');
-				document.querySelector('.top__text').classList.add('show');
-				_gaq.push(['_trackEvent', 'top_hidden_click', '2']);
-			});
-
-			document.querySelector('.logo').addEventListener('click', function(e) {
-				_gaq.push(['_trackEvent', 'logo_clicked', 'logo']);
-			});
-
-			document.querySelector('.closeVideo').addEventListener('click', function() {
-				let videoSRC = document.querySelector('.middle__video').getAttribute('src');
-				document.querySelector('.middle__video').setAttribute('src', videoSRC);
-			});
-
-			if (window.location.href.indexOf("how_to_use") != -1) {
-				document.querySelector('.middle__item:nth-child(3) .middle__link').classList.add('clicked');
-		        document.querySelector('.middle__item:nth-child(3) .middle__link').parentNode.classList.toggle('opened');
-		        document.querySelector('.middle__item:nth-child(3) .middle__link').parentNode.parentNode.classList.toggle('condition');
-			}
-
-			if (window.location.href.indexOf("greetings") != -1) {
-				const $greeting = document.querySelector('.greeting')
-				$greeting.classList.add('greeting-vis');
-				setTimeout(function() {
-					$greeting.classList.add('greeting-hid');
-				}, 10000);
-			}
-			
-			console.log('%c Hi there!', 'color: #efbb35');
-			console.log(' ');
-			console.log('%c What do u want to find?', 'color: #efbb35');
-			console.log(' ');
-			console.log('%c There are few hidden possibilities at this website. Can you find them?', 'color: #efbb35');
-			console.log(' ');
-			console.log('%c If you have errors within console, disable adblock or hide network errors. Theese are not mine:)', 'color: #efbb35');
-			console.log(' ');
-			console.log('%c Have a good day!', 'color: #efbb35');
-		} else {
-			// mobiles 
-			const $triggerLink = document.querySelectorAll(".middle__link");
-
-			$triggerLink.forEach(function(element) {
-			    element.addEventListener("click", function(e) {
-			    	e.preventDefault();
-			    });
-			});
-
-			document.querySelector('.top__title').addEventListener("click", function(e) {
-		    	e.preventDefault();
-		    });
-
-			document.querySelector('.top__bold').addEventListener("click", function(e) {
-		    	e.preventDefault();
-		    });
-		}
-		const setOptHandler = () => {
-			document.querySelector('.optPage').addEventListener('click', e => {
-				e.preventDefault();
-				const event = new Event("openOptPage");
-	  			document.dispatchEvent(event);
-	  			_gaq.push(['_trackEvent', 'openOptPage']);
-			});
-		};
-		setOptHandler();
-		// temporarily version of responsive
-		let oldScreenWidth = curScreenWeidth;
-		window.addEventListener('resize', checkWidth);
-		function checkWidth() {
-			curScreenWeidth = window.screen.width;
-			if (((oldScreenWidth < 1024) && (curScreenWeidth >= 1024)) ||
-				((oldScreenWidth >= 1024) && (curScreenWeidth < 1024)) ) {
-				location.reload();
-			}
-			oldScreenWidth = curScreenWeidth;
-		}
+		let curScreenWeidth=window.screen.width;if(curScreenWeidth>1023){var _gaq=_gaq||[];function setHeights(){document.querySelectorAll(".middle__wrap:not(.middle__img_wr)").forEach(function(e){let t=0;for(var c=0;c<e.children.length;c++)t+=e.children[c].offsetHeight;e.style.height=t+"px"});let e=document.querySelector(".middle__img_wr"),t=e.children[0].children[0].offsetHeight;e.style.height=t+"px"}_gaq.push(["_setAccount","UA-138501898-2"]),_gaq.push(["_trackPageview"]),function(){var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.src="https://ssl.google-analytics.com/ga.js";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)}(),setHeights(),window.addEventListener("resize",setHeights),new MutationObserver(setHeights).observe(document.documentElement,{childList:!0,subtree:!0,characterData:!0});let e=document.querySelectorAll(".middle__link");e.forEach(function(e){e.addEventListener("click",function(e){_gaq.push(["_trackEvent","section_clicked",e.target.id]),e.preventDefault(),this.classList.add("clicked"),this.parentNode.classList.toggle("opened"),this.parentNode.parentNode.classList.toggle("condition")})});let t=document.querySelector(".popUp__img");if(document.querySelectorAll(".imgClick").forEach(function(e){e.addEventListener("click",function(e){e.preventDefault(),t.src=e.target.src;let c=e.target.getAttribute("data-desc");document.querySelector(".popUp__text").innerHTML=c,document.querySelector(".popUp").classList.add("show"),_gaq.push(["_trackEvent","image_clicked",t.src])})}),document.querySelector(".popUp__close").addEventListener("click",function(e){e.preventDefault(),document.querySelector(".popUp").classList.add("hide"),setTimeout(function(){document.querySelector(".popUp").classList.remove("show"),document.querySelector(".popUp").classList.remove("hide")},1e3)}),document.querySelectorAll(".middle__close").forEach(function(t){t.addEventListener("click",function(t){t.preventDefault(),this.parentNode.classList.toggle("opened"),this.parentNode.parentNode.classList.toggle("condition"),e.forEach(function(e){e.classList.remove("clicked")}),_gaq.push(["_trackEvent","close_section","close_section"])})}),document.querySelector(".top-interactive_1").addEventListener("click",function(e){e.preventDefault(),this.classList.add("hide"),document.querySelector(".top-interactive_2").classList.add("show"),_gaq.push(["_trackEvent","top_hidden_click","1"])}),document.querySelector(".top-interactive_2").addEventListener("click",function(e){e.preventDefault(),this.classList.add("hide"),document.querySelector(".top__text").classList.add("show"),_gaq.push(["_trackEvent","top_hidden_click","2"])}),document.querySelector(".logo").addEventListener("click",function(e){_gaq.push(["_trackEvent","logo_clicked","logo"])}),document.querySelector(".closeVideo").addEventListener("click",function(){let e=document.querySelector(".middle__video").getAttribute("src");document.querySelector(".middle__video").setAttribute("src",e)}),-1!=window.location.href.indexOf("how_to_use")&&(document.querySelector(".middle__item:nth-child(3) .middle__link").classList.add("clicked"),document.querySelector(".middle__item:nth-child(3) .middle__link").parentNode.classList.toggle("opened"),document.querySelector(".middle__item:nth-child(3) .middle__link").parentNode.parentNode.classList.toggle("condition")),-1!=window.location.href.indexOf("greetings")){const e=document.querySelector(".greeting");e.classList.add("greeting-vis"),setTimeout(function(){e.classList.add("greeting-hid")},1e4)}console.log("%c Hi there!","color: #efbb35"),console.log(" "),console.log("%c What do u want to find?","color: #efbb35"),console.log(" "),console.log("%c There are few hidden possibilities at this website. Can you find them?","color: #efbb35"),console.log(" "),console.log("%c If you have errors within console, disable adblock or hide network errors. Theese are not mine:)","color: #efbb35"),console.log(" "),console.log("%c Have a good day!","color: #efbb35")}else{document.querySelectorAll(".middle__link").forEach(function(e){e.addEventListener("click",function(e){e.preventDefault()})}),document.querySelector(".top__title").addEventListener("click",function(e){e.preventDefault()}),document.querySelector(".top__bold").addEventListener("click",function(e){e.preventDefault()})}const setOptHandler=()=>{document.querySelector(".optPage").addEventListener("click",e=>{e.preventDefault();const t=new Event("openOptPage");document.dispatchEvent(t),_gaq.push(["_trackEvent","openOptPage"])})};document.querySelector(".optPage").addEventListener("click",e=>{e.preventDefault();const t=new Event("openOptPage");document.dispatchEvent(t),_gaq.push(["_trackEvent","openOptPage"])});let oldScreenWidth=curScreenWeidth;function checkWidth(){curScreenWeidth=window.screen.width,(oldScreenWidth<1024&&curScreenWeidth>=1024||oldScreenWidth>=1024&&curScreenWeidth<1024)&&location.reload(),oldScreenWidth=curScreenWeidth}window.addEventListener("resize",checkWidth);
 	</script>
 </body>
 </html>
