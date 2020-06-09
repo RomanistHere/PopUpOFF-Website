@@ -227,15 +227,29 @@ br::selection,
 .store_links{
     position: absolute;
 
-    top: 50%;
+    /*top: 50%;
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     -o-transform: translateY(-50%);
-    transform: translateY(-50%);
+    transform: translateY(-50%);*/
+    bottom: 68px;
     left: 40px;
 }
 
 .store_links__logo{
     height: 60px;
     width: 68px;
+
+    -webkit-transition: all ease .3s .1s;
+    -o-transition: all ease .3s .1s;
+    transition: all ease .3s .1s;
+}
+
+.store_links:hover .store_links__logo{
+    filter: blur(1px);
+}
+
+.store_links:hover .store_links__logo:hover{
+    filter: drop-shadow( 0px 0px 5px rgba(239, 187, 53, 1)) blur(0);
+    /*filter: drop-shadow( 0px 0px 8px rgba(0, 0, 0, 1)) blur(0);*/
 }
