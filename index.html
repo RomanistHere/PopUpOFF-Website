@@ -373,6 +373,52 @@
 		Thank you for installing<3. Help me to make internet better place! If you like my extension, feel free to share it!
 	</p>
 	<script>
+		const closeVideo = () => {
+			const videoSRC = document.querySelector('.middle__video').getAttribute('src');
+			document.querySelector('.middle__video').setAttribute('src', videoSRC);				
+		}
+		const setHeights = () => {
+			const middleWrap = document.querySelectorAll(".middle__wrap:not(.middle__img_wr)");
+			middleWrap.forEach(function(element) {
+				let sumOfChildsHeights = 0;
+				for (var i = 0; i < element.children.length; i++) {
+				    sumOfChildsHeights = sumOfChildsHeights + element.children[i].offsetHeight;
+				}
+				element.style.height = sumOfChildsHeights + 'px';
+			});
+			let middleImgWrap = document.querySelector(".middle__img_wr");
+			const sumOfChildsHeights = middleImgWrap.children[0].children[0].offsetHeight;
+			middleImgWrap.style.height = sumOfChildsHeights + 'px';
+		}
+		const messToConsole = () => {
+			console.log('%c Hi there!', 'color: #efbb35');
+			console.log(' ');
+			console.log('%c What do u want to find?', 'color: #efbb35');
+			console.log(' ');
+			console.log('%c There are few hidden possibilities at this website. Can you find them?', 'color: #efbb35');
+			console.log(' ');
+			console.log('%c If you have errors within console, disable adblock or hide network errors. Theese are not mine:)', 'color: #efbb35');
+			console.log(' ');
+			console.log('%c Have a good day!', 'color: #efbb35');
+		}
+		const setOptHandler = () => {
+			document.querySelector('.optPage').addEventListener('click', e => {
+				e.preventDefault();
+				const event = new Event("openOptPage");
+	  			document.dispatchEvent(event);
+	  			_gaq.push(['_trackEvent', 'openOptPage']);
+			});
+		};
+		const checkWidth = () => {
+			curScreenWeidth = window.screen.width;
+			if (((oldScreenWidth < 1024) && (curScreenWeidth >= 1024)) ||
+				((oldScreenWidth >= 1024) && (curScreenWeidth < 1024)) ) {
+				location.reload();
+			}
+			oldScreenWidth = curScreenWeidth;
+			closeVideo();
+		}
+
 		let curScreenWeidth = window.screen.width;
 		if (curScreenWeidth > 1023) {
 			var _gaq = _gaq || [];
@@ -387,20 +433,6 @@
 			  var s = document.getElementsByTagName('script')[0];
 			  s.parentNode.insertBefore(ga, s);
 			})();
-
-			function setHeights() {
-				const middleWrap = document.querySelectorAll(".middle__wrap:not(.middle__img_wr)");
-				middleWrap.forEach(function(element) {
-					let sumOfChildsHeights = 0;
-					for (var i = 0; i < element.children.length; i++) {
-					    sumOfChildsHeights = sumOfChildsHeights + element.children[i].offsetHeight;
-					}
-					element.style.height = sumOfChildsHeights + 'px';
-				});
-				let middleImgWrap = document.querySelector(".middle__img_wr");
-				const sumOfChildsHeights = middleImgWrap.children[0].children[0].offsetHeight;
-				middleImgWrap.style.height = sumOfChildsHeights + 'px';
-			}
 
 			setHeights();
 			window.addEventListener('resize', setHeights);
@@ -487,12 +519,9 @@
 			    	const storeData = this.getAttribute("data-link");
 			        _gaq.push(['_trackEvent', 'open_store', storeData]);
 			    });
-			});			
+			});	
 
-			document.querySelector('.closeVideo').addEventListener('click', function() {
-				const videoSRC = document.querySelector('.middle__video').getAttribute('src');
-				document.querySelector('.middle__video').setAttribute('src', videoSRC);
-			});
+			document.querySelector('.closeVideo').addEventListener('click', closeVideo);
 
 			if (window.location.href.indexOf("how_to_use") != -1) {
 				document.querySelector('.middle__item:nth-child(3) .middle__link').classList.add('clicked');
@@ -508,15 +537,7 @@
 				}, 10000);
 			}
 			
-			console.log('%c Hi there!', 'color: #efbb35');
-			console.log(' ');
-			console.log('%c What do u want to find?', 'color: #efbb35');
-			console.log(' ');
-			console.log('%c There are few hidden possibilities at this website. Can you find them?', 'color: #efbb35');
-			console.log(' ');
-			console.log('%c If you have errors within console, disable adblock or hide network errors. Theese are not mine:)', 'color: #efbb35');
-			console.log(' ');
-			console.log('%c Have a good day!', 'color: #efbb35');
+			messToConsole();
 		} else {
 			// mobiles 
 			const $triggerLink = document.querySelectorAll(".middle__link");
@@ -535,26 +556,10 @@
 		    	e.preventDefault();
 		    });
 		}
-		const setOptHandler = () => {
-			document.querySelector('.optPage').addEventListener('click', e => {
-				e.preventDefault();
-				const event = new Event("openOptPage");
-	  			document.dispatchEvent(event);
-	  			_gaq.push(['_trackEvent', 'openOptPage']);
-			});
-		};
 		setOptHandler();
 		// temporarily version of responsive
 		let oldScreenWidth = curScreenWeidth;
 		window.addEventListener('resize', checkWidth);
-		function checkWidth() {
-			curScreenWeidth = window.screen.width;
-			if (((oldScreenWidth < 1024) && (curScreenWeidth >= 1024)) ||
-				((oldScreenWidth >= 1024) && (curScreenWeidth < 1024)) ) {
-				location.reload();
-			}
-			oldScreenWidth = curScreenWeidth;
-		}
 	</script>
 </body>
 </html>
