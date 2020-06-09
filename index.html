@@ -221,7 +221,7 @@
 			</svg>
 		</a>
 		<div class="store_links">
-			<a href="https://chrome.google.com/webstore/detail/popupoff-popup-blocker/ifnkdbpmgkdbfklnbfidaackdenlmhgh" rel="noreferrer" target="_blank" class="store_links__item">
+			<a href="https://chrome.google.com/webstore/detail/popupoff-popup-blocker/ifnkdbpmgkdbfklnbfidaackdenlmhgh" data-link="Chrome" rel="noreferrer" target="_blank" class="store_links__item">
 				<svg 
 				xmlns="http://www.w3.org/2000/svg" 
 				xmlns:xlink="http://www.w3.org/1999/xlink" 
@@ -283,7 +283,7 @@
 					</g>
 				</svg>
 			</a>
-			<a href="https://addons.mozilla.org/en-US/firefox/addon/popupoff/" rel="noreferrer" target="_blank" class="store_links__item">
+			<a href="https://addons.mozilla.org/en-US/firefox/addon/popupoff/" data-link="Firefox" rel="noreferrer" target="_blank" class="store_links__item">
 				<svg
 				xmlns:dc="http://purl.org/dc/elements/1.1/"
 				xmlns:cc="http://creativecommons.org/ns#"
@@ -328,7 +328,7 @@
 					d="m 26.354,44.744915 c 0,0 1.789,-6.667 12.81,-6.667 1.191,0 4.6,-3.325 4.661,-4.289 a 19.3,19.3 0 0 1 -14.552,-0.572 14.618,14.618 0 0 0 -14.249,0.572 9.953,9.953 0 0 0 9.181,5.775 c -0.718,6.337 2.632,13.725 10.741,17.6 0.181,0.087 0.351,0.181 0.537,0.264 -4.733,-2.445 -8.641,-7.069 -9.129,-12.683 z" />
 				</svg>
 			</a>
-			<a href="https://microsoftedge.microsoft.com/addons/detail/elacdkdmimelpnkbccdanmnabhajdccm" rel="noreferrer" target="_blank" class="store_links__item">
+			<a href="https://microsoftedge.microsoft.com/addons/detail/elacdkdmimelpnkbccdanmnabhajdccm" data-link="Edge" rel="noreferrer" target="_blank" class="store_links__item">
 				<svg 
 				id="Layer_1" 
 				xmlns="http://www.w3.org/2000/svg" 
@@ -389,7 +389,7 @@
 			})();
 
 			function setHeights() {
-				let middleWrap = document.querySelectorAll(".middle__wrap:not(.middle__img_wr)");
+				const middleWrap = document.querySelectorAll(".middle__wrap:not(.middle__img_wr)");
 				middleWrap.forEach(function(element) {
 					let sumOfChildsHeights = 0;
 					for (var i = 0; i < element.children.length; i++) {
@@ -398,21 +398,21 @@
 					element.style.height = sumOfChildsHeights + 'px';
 				});
 				let middleImgWrap = document.querySelector(".middle__img_wr");
-				let sumOfChildsHeights = middleImgWrap.children[0].children[0].offsetHeight;
+				const sumOfChildsHeights = middleImgWrap.children[0].children[0].offsetHeight;
 				middleImgWrap.style.height = sumOfChildsHeights + 'px';
 			}
 
 			setHeights();
 			window.addEventListener('resize', setHeights);
 
-			let dom_observer = new MutationObserver(setHeights);
+			const dom_observer = new MutationObserver(setHeights);
 			dom_observer.observe(document.documentElement, { 
 				childList: true, 
 				subtree: true,
 				characterData: true
 			});
 			// handlers
-			let triggerLink = document.querySelectorAll(".middle__link");
+			const triggerLink = document.querySelectorAll(".middle__link");
 
 			triggerLink.forEach(function(element) {
 			    element.addEventListener("click", function(e) {
@@ -424,21 +424,21 @@
 			    });
 			});
 
-			let imgPopUp = document.querySelector(".popUp__img");
+			const imgPopUp = document.querySelector(".popUp__img");
 
-			let imgClick = document.querySelectorAll(".imgClick");
+			const imgClick = document.querySelectorAll(".imgClick");
 			imgClick.forEach(function(element) {
 			    element.addEventListener("click", function(e) {
 			    	e.preventDefault();
 			    	imgPopUp.src = e.target.src;
-			    	let imgText = e.target.getAttribute('data-desc');
+			    	const imgText = e.target.getAttribute('data-desc');
 			    	document.querySelector('.popUp__text').innerHTML = imgText;
 			        document.querySelector(".popUp").classList.add("show");
 			        _gaq.push(['_trackEvent', 'image_clicked', imgPopUp.src]);
 			    });
 			});
 
-			let imgClose = document.querySelector(".popUp__close");
+			const imgClose = document.querySelector(".popUp__close");
 
 		    imgClose.addEventListener("click", function(e) {
 		    	e.preventDefault();
@@ -449,7 +449,7 @@
 		        }, 1000);
 			});
 
-			let closeSection = document.querySelectorAll(".middle__close");
+			const closeSection = document.querySelectorAll(".middle__close");
 
 			closeSection.forEach(function(element) {
 			    element.addEventListener("click", function(e) {
@@ -481,8 +481,16 @@
 				_gaq.push(['_trackEvent', 'logo_clicked', 'logo']);
 			});
 
+			const storeLinks = document.querySelectorAll(".store_links__item");
+			storeLinks.forEach(function(element) {
+			    element.addEventListener("click", function(e) {
+			    	const storeData = this.getAttribute("data-link");
+			        _gaq.push(['_trackEvent', 'open_store', storeData]);
+			    });
+			});			
+
 			document.querySelector('.closeVideo').addEventListener('click', function() {
-				let videoSRC = document.querySelector('.middle__video').getAttribute('src');
+				const videoSRC = document.querySelector('.middle__video').getAttribute('src');
 				document.querySelector('.middle__video').setAttribute('src', videoSRC);
 			});
 
