@@ -223,3 +223,19 @@ br::selection,
     opacity: 0;
     transition: all ease .5s .2s
 }
+
+.store_links{
+    position: absolute;
+
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+    left: 40px;
+}
+
+.store_links__logo{
+    height: 60px;
+    width: 68px;
+}
