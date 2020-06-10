@@ -5,10 +5,16 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="Description" content="Chrome extension. Removes popups, overlays, cookie and 'please, disable adBlock' notifications with restrictions, another tools can not. Makes internet experience better.">
 	<meta name="google-site-verification" content="VOAqlvL1BbL_Glqy47fldDLcHlz8MjARlIfftmcdios" />
+
 	<link rel="shortcut icon" type="image/png" href="logo32.png"/>
+	
 	<link rel="stylesheet" href="css/base.css">
 	<link rel="stylesheet" href="css/main.css">
 	<link rel="stylesheet" href="css/main-non-crit.css" media="print" onload="this.media='all'">
+
+	<script defer src="js/functions.js"></script>
+	<script defer src="js/index.js"></script>
+
 	<title>PopUpOFF - Chrome extension. Improves the web.</title>
 </head>
 <body>
@@ -372,194 +378,5 @@
 	<p class="greeting">
 		Thank you for installing<3. Help me to make internet better place! If you like my extension, feel free to share it!
 	</p>
-	<script>
-		const closeVideo = () => {
-			const videoSRC = document.querySelector('.middle__video').getAttribute('src');
-			document.querySelector('.middle__video').setAttribute('src', videoSRC);				
-		}
-		const setHeights = () => {
-			const middleWrap = document.querySelectorAll(".middle__wrap:not(.middle__img_wr)");
-			middleWrap.forEach(function(element) {
-				let sumOfChildsHeights = 0;
-				for (var i = 0; i < element.children.length; i++) {
-				    sumOfChildsHeights = sumOfChildsHeights + element.children[i].offsetHeight;
-				}
-				element.style.height = sumOfChildsHeights + 'px';
-			});
-			let middleImgWrap = document.querySelector(".middle__img_wr");
-			const sumOfChildsHeights = middleImgWrap.children[0].children[0].offsetHeight;
-			middleImgWrap.style.height = sumOfChildsHeights + 'px';
-		}
-		const messToConsole = () => {
-			console.log('%c Hi there!', 'color: #efbb35');
-			console.log(' ');
-			console.log('%c What do u want to find?', 'color: #efbb35');
-			console.log(' ');
-			console.log('%c There are few hidden possibilities at this website. Can you find them?', 'color: #efbb35');
-			console.log(' ');
-			console.log('%c If you have errors within console, disable adblock or hide network errors. Theese are not mine:)', 'color: #efbb35');
-			console.log(' ');
-			console.log('%c Have a good day!', 'color: #efbb35');
-		}
-		const setOptHandler = () => {
-			document.querySelector('.optPage').addEventListener('click', e => {
-				e.preventDefault();
-				const event = new Event("openOptPage");
-	  			document.dispatchEvent(event);
-	  			_gaq.push(['_trackEvent', 'openOptPage']);
-			});
-		};
-		const checkWidth = () => {
-			curScreenWeidth = window.screen.width;
-			if (((oldScreenWidth < 1024) && (curScreenWeidth >= 1024)) ||
-				((oldScreenWidth >= 1024) && (curScreenWeidth < 1024)) ) {
-				location.reload();
-			}
-			oldScreenWidth = curScreenWeidth;
-			closeVideo();
-		}
-
-		let curScreenWeidth = window.screen.width;
-		if (curScreenWeidth > 1023) {
-			var _gaq = _gaq || [];
-			_gaq.push(['_setAccount', 'UA-138501898-2']);
-			_gaq.push(['_trackPageview']);
-
-			(function() {
-			  var ga = document.createElement('script');
-			  ga.type = 'text/javascript';
-			  ga.async = true;
-			  ga.src = 'https://ssl.google-analytics.com/ga.js';
-			  var s = document.getElementsByTagName('script')[0];
-			  s.parentNode.insertBefore(ga, s);
-			})();
-
-			setHeights();
-			window.addEventListener('resize', setHeights);
-
-			const dom_observer = new MutationObserver(setHeights);
-			dom_observer.observe(document.documentElement, { 
-				childList: true, 
-				subtree: true,
-				characterData: true
-			});
-			// handlers
-			const triggerLink = document.querySelectorAll(".middle__link");
-
-			triggerLink.forEach(function(element) {
-			    element.addEventListener("click", function(e) {
-			    	_gaq.push(['_trackEvent', 'section_clicked', e.target.id]);
-			    	e.preventDefault();
-			        this.classList.add('clicked');
-			        this.parentNode.classList.toggle('opened');
-			        this.parentNode.parentNode.classList.toggle('condition');
-			    });
-			});
-
-			const imgPopUp = document.querySelector(".popUp__img");
-
-			const imgClick = document.querySelectorAll(".imgClick");
-			imgClick.forEach(function(element) {
-			    element.addEventListener("click", function(e) {
-			    	e.preventDefault();
-			    	imgPopUp.src = e.target.src;
-			    	const imgText = e.target.getAttribute('data-desc');
-			    	document.querySelector('.popUp__text').innerHTML = imgText;
-			        document.querySelector(".popUp").classList.add("show");
-			        _gaq.push(['_trackEvent', 'image_clicked', imgPopUp.src]);
-			    });
-			});
-
-			const imgClose = document.querySelector(".popUp__close");
-
-		    imgClose.addEventListener("click", function(e) {
-		    	e.preventDefault();
-		        document.querySelector(".popUp").classList.add("hide");
-		        setTimeout(function() {
-		        	document.querySelector(".popUp").classList.remove("show");
-		        	document.querySelector(".popUp").classList.remove("hide");
-		        }, 1000);
-			});
-
-			const closeSection = document.querySelectorAll(".middle__close");
-
-			closeSection.forEach(function(element) {
-			    element.addEventListener("click", function(e) {
-			    	e.preventDefault();
-			    	this.parentNode.classList.toggle('opened');
-			        this.parentNode.parentNode.classList.toggle('condition');
-			        triggerLink.forEach(function(element) {
-			        	element.classList.remove('clicked');
-			        });
-			        _gaq.push(['_trackEvent', 'close_section', 'close_section']);
-			    });
-			});
-
-			document.querySelector('.top-interactive_1').addEventListener('click', function(e) {
-				e.preventDefault();
-				this.classList.add('hide');
-				document.querySelector('.top-interactive_2').classList.add('show');
-				_gaq.push(['_trackEvent', 'top_hidden_click', '1']);
-			});
-
-			document.querySelector('.top-interactive_2').addEventListener('click', function(e) {
-				e.preventDefault();
-				this.classList.add('hide');
-				document.querySelector('.top__text').classList.add('show');
-				_gaq.push(['_trackEvent', 'top_hidden_click', '2']);
-			});
-
-			document.querySelector('.logo').addEventListener('click', function(e) {
-				_gaq.push(['_trackEvent', 'logo_clicked', 'logo']);
-			});
-
-			const storeLinks = document.querySelectorAll(".store_links__item");
-			storeLinks.forEach(function(element) {
-			    element.addEventListener("click", function(e) {
-			    	const storeData = this.getAttribute("data-link");
-			        _gaq.push(['_trackEvent', 'open_store', storeData]);
-			    });
-			});	
-
-			document.querySelector('.closeVideo').addEventListener('click', closeVideo);
-
-			if (window.location.href.indexOf("how_to_use") != -1) {
-				document.querySelector('.middle__item:nth-child(3) .middle__link').classList.add('clicked');
-		        document.querySelector('.middle__item:nth-child(3) .middle__link').parentNode.classList.toggle('opened');
-		        document.querySelector('.middle__item:nth-child(3) .middle__link').parentNode.parentNode.classList.toggle('condition');
-			}
-
-			if (window.location.href.indexOf("greetings") != -1) {
-				const $greeting = document.querySelector('.greeting')
-				$greeting.classList.add('greeting-vis');
-				setTimeout(function() {
-					$greeting.classList.add('greeting-hid');
-				}, 10000);
-			}
-			
-			messToConsole();
-		} else {
-			// mobiles 
-			const $triggerLink = document.querySelectorAll(".middle__link");
-
-			$triggerLink.forEach(function(element) {
-			    element.addEventListener("click", function(e) {
-			    	e.preventDefault();
-			    });
-			});
-
-			document.querySelector('.top__title').addEventListener("click", function(e) {
-		    	e.preventDefault();
-		    });
-
-			document.querySelector('.top__bold').addEventListener("click", function(e) {
-		    	e.preventDefault();
-		    });
-		}
-		setOptHandler();
-		// temporarily version of responsive
-		let oldScreenWidth = curScreenWeidth;
-		window.addEventListener('resize', checkWidth);
-	</script>
 </body>
 </html>

@@ -93,12 +93,19 @@
 }
 
 .opened .middle__wrap {
-    opacity: 1
+    position: relative;
+    z-index: 2;
+
+    opacity: 1;
 }
 
 .condition .middle__item:not(.opened) {
     max-height: 0;
     opacity: 0
+}
+
+.middle__item:not(.opened) .middle__video {
+    width: 0;
 }
 
 .middle__close {
@@ -272,5 +279,9 @@
     #whyThis + .middle__img_wr,
     .popUp{
     	display: none;
+    }
+
+    .middle__item:not(.opened) .middle__video {
+        width: auto;
     }
 }
