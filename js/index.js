@@ -92,6 +92,10 @@ if (curScreenWeidth > 1023) {
 		_gaq.push(['_trackEvent', 'logo_clicked', 'logo']);
 	});
 
+	document.querySelector('.follow').addEventListener('click', function(e) {
+		_gaq.push(['_trackEvent', 'social_media', 'twitter']);
+	});
+
 	const storeLinks = document.querySelectorAll(".store_links__item");
 	storeLinks.forEach(function(element) {
 	    element.addEventListener("click", function(e) {
