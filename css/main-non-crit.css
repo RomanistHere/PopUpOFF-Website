@@ -227,14 +227,6 @@ br::selection,
 .store_links{
     position: absolute;
 
-    /*top: 50%;
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    -o-transform: translateY(-50%);
-    transform: translateY(-50%);*/
-    bottom: 68px;
-    left: 40px;
-
     bottom: 68px;
     left: 57px;
 }
