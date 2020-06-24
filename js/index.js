@@ -106,13 +106,17 @@ if (curScreenWeidth > 1023) {
 
 	document.querySelector('.closeVideo').addEventListener('click', closeVideo);
 
-	if (window.location.href.indexOf("how_to_use") != -1) {
+	const url = window.location.href;
+
+	if (url.indexOf("how_to_use") != -1) {
 		document.querySelector('.middle__item:nth-child(3) .middle__link').classList.add('clicked');
         document.querySelector('.middle__item:nth-child(3) .middle__link').parentNode.classList.toggle('opened');
         document.querySelector('.middle__item:nth-child(3) .middle__link').parentNode.parentNode.classList.toggle('condition');
 	}
 
-	if (window.location.href.indexOf("greetings") != -1) {
+	if (url.indexOf("greetings") != -1) {
+		const browserStore = url.substring(url.lastIndexOf("greetings") + 10);
+		_gaq.push(['_trackEvent', 'greetings', browserStore ? browserStore : 'unknown']);
 		const $greeting = document.querySelector('.greeting')
 		$greeting.classList.add('greeting-vis');
 		setTimeout(function() {
