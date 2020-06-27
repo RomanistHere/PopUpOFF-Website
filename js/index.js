@@ -147,3 +147,10 @@ setOptHandler();
 // temporarily version of responsive
 let oldScreenWidth = curScreenWeidth;
 window.addEventListener('resize', checkWidth);
+
+const initVideo = () => {
+	const video = document.querySelector('iframe');
+	video.setAttribute('src', video.getAttribute('data-src'))
+}
+
+initVideo();

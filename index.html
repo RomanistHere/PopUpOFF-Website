@@ -6,6 +6,11 @@
 	<meta name="Description" content="Chrome extension. Removes popups, overlays, cookie and 'please, disable adBlock' notifications with restrictions, another tools can not. Makes internet experience better.">
 	<meta name="google-site-verification" content="VOAqlvL1BbL_Glqy47fldDLcHlz8MjARlIfftmcdios" />
 
+	<meta property="og:title" content="PopUpOFF - Chrome extension. Improves the web." />
+	<meta property="og:type" content="product" />
+	<meta property="og:image" content="images/logofull.png" />
+	<meta property="og:url" content="https://github.com/RomanistHere/PopUpOFF" />
+
 	<link rel="shortcut icon" type="image/png" href="logo32.png"/>
 	
 	<link rel="stylesheet" href="css/base.css">
@@ -21,7 +26,8 @@
 	<header class="top">
 		<a href="#" class="top__title top-interactive_2">Glad you are here!</a>
 		<a href="#" class="top__bold top-interactive_1">hello</a>
-		<h1 class="top__text">Be guest of mine</h1>
+		<h2 class="top__text">Be guest of mine</h2>
+		<h1 class="top__hidden">PopUpOFF - advanced popup, overlay and  notification blocker</h1>
 	</header>
 	<main>
 		<ul class="middle">
@@ -33,7 +39,7 @@
 						class="middle__video" 
 						width="560" 
 						height="315" 
-						src="https://www.youtube-nocookie.com/embed/dMLBZaGud7g?rel=0" 
+						data-src="https://www.youtube-nocookie.com/embed/dMLBZaGud7g?rel=0" 
 						frameborder="0" 
 						allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
 						allowfullscreen
@@ -47,17 +53,17 @@
 				<ul class="middle__wrap cont_wr middle__img_wr">
 					<li class="cont_wr__item cont_wr__img_item">
 						<a title="Screen without extensions. Click to zoom." class="imgClick" href="#">
-							<img data-desc="This is how typical site I visit looks like. This screen we use clean chrome without any extensions." class="cont_wr__image" src="images/3.jpg" alt="image example" loading="lazy">
+							<img data-desc="This is how typical site I visit looks like. This screen we use clean chrome without any extensions." class="cont_wr__image" src="images/3.jpg" alt="screen without extensions" loading="lazy">
 						</a>
 					</li>
 					<li class="cont_wr__item cont_wr__img_item">
 						<a title="Screen with top 10 extensions from Store. Click to zoom." class="imgClick" href="#">
-							<img data-desc="This is how typical site I visit looks like. This screen we use all extensions I could find for blocking ads and popups." class="cont_wr__image" src="images/4.jpg" alt="image example" loading="lazy">
+							<img data-desc="This is how typical site I visit looks like. This screen we use all extensions I could find for blocking ads and popups." class="cont_wr__image" src="images/4.jpg" alt="screen with extensions" loading="lazy">
 						</a>
 					</li>
 					<li class="cont_wr__item cont_wr__img_item">
 						<a title="Screen with PopUpOFF. Click to zoom." class="imgClick" href="#">
-							<img data-desc="This is how typical site I visit looks like. This screen we use PopUpOFF. Help comforting yourself!" class="cont_wr__image" src="images/5.jpg" alt="image example" loading="lazy">
+							<img data-desc="This is how typical site I visit looks like. This screen we use PopUpOFF. Help comforting yourself!" class="cont_wr__image" src="images/5.jpg" alt="screen with PopUpOFF" loading="lazy">
 						</a>
 					</li>
 				</ul>
@@ -159,8 +165,8 @@
 						<p>Important thing! I could not test PopUpOFF everywhere, so if you think you found website where it has to work but it isn't, please, write right to <a class="in_text_link" href="mailto:RomanistHere@gmail.com">me</a> - it will help a lot.</p>
 					</li>
 					<li class="cont_wr__item">
-						<p>
-							<a class="in_text_link" target="_blank" href="pages/policy.html">Privacy policy</a>
+						<p aria-hidden="true">
+							<a class="in_text_link" href="pages/policy.html">Privacy policy</a>
 						</p>
 					</li>
 				</ul>
@@ -192,7 +198,12 @@
 		</ul>
 	</main>
 	<footer>
-		<a href="https://chrome.google.com/webstore/detail/popupoff-popup-blocker/ifnkdbpmgkdbfklnbfidaackdenlmhgh" aria-label="linkToStore" rel="noreferrer" target="_blank" class="logo">
+		<a 
+			target="_blank" 
+			rel="noreferrer" 
+			href="https://romanisthere.github.io/PopUpOFF-Website/pages/update.html"
+			aria-label="link to updates" 
+			class="logo">
 			<svg version="1.2" class="logo__img" baseProfile="tiny"
 				 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 167 83"
 				 xml:space="preserve">
@@ -379,17 +390,18 @@
 		<a href="#" class="popUp__close">
 			<div class="outer">
 				<div class="inner">
-					<label class="close_label">Back</label>
+					<span class="close_label">Back</span>
 				</div>
 			</div>
 		</a>
 		<div class="popUp__wrap">
-			<img class="popUp__img" src="images/3.jpg" alt="image example" loading="lazy">
+			<img class="popUp__img" src="images/3.jpg" alt="image popup" loading="lazy">
 		</div>
-		<p class="popUp__text"></p>
+		<p aria-hidden="true" class="popUp__text"></p>
 	</div>
 	<p class="greeting">
 		Thank you for installing. Help me to make internet better place! If you like my extension, feel free to share it!
 	</p>
+	<noscript>Your browser does not support JavaScript!</noscript>
 </body>
 </html>

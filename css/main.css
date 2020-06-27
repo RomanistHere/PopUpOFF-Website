@@ -10,15 +10,25 @@
     position: relative
 }
 
+.top__hidden {
+    position: absolute;
+    z-index: -100;
+
+    height: 0;
+    width: 0;
+    opacity: 0;
+}
+
 .top__bold {
+    position: relative;
+    display: inline-block;
+
+    padding: 0 40px;
+
     font-size: 130px;
     font-weight: 700;
     color: #efbb35;
     text-transform: uppercase;
-    display: inline-block;
-    padding: 0 40px;
-    transition: all ease 1.4s;
-    position: relative
 }
 
 .top__text {
@@ -27,7 +37,6 @@
     color: #efbb35;
     
     padding-bottom: 50px;
-    transition: all ease 1.5s 1.8s
 }
 
 .show.top__text {
@@ -41,12 +50,14 @@
 }
 
 .top-interactive_2 {
-    opacity: 0;
     position: absolute;
+
     padding: 40px 0;
     left: 50%;
-    transition: opacity ease 1.5s 1s, color ease 1.4s;
     transform: translateX(-50%);
+
+    opacity: 0;
+    
     font-size: 80px;
     color: #efbb35
 }
@@ -80,7 +91,6 @@
 
 .middle__link {
     font-size: 24px;
-    transition: all ease 1.5s
 }
 
 .middle__item:not(.opened) .middle__wrap {
