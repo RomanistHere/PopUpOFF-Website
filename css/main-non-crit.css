@@ -265,22 +265,26 @@ br::selection,
 }
 
 .follow{
+    display: inline-block;
+
     -webkit-transition: color ease .4s;
     -o-transition: color ease .4s;
     transition: color ease .4s;
 }
 
 .follow__icon{
-    margin-top: 5px;
+    margin: 5px 2px 0 2px;
     width: 28px;
     height: 28px;
 }
 
-.follow__tw{
+.follow__tw,
+.follow__tg{
     transition: all ease .4s;
 }
 
-.follow:hover .follow__tw{
+.follow:hover .follow__tw,
+.follow:hover .follow__tg{
     fill: #efbb35;
 }
 
