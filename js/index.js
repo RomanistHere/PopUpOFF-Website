@@ -92,9 +92,11 @@ if (curScreenWeidth > 1023) {
 		_gaq.push(['_trackEvent', 'logo_clicked', 'logo']);
 	});
 
-	document.querySelector('.follow').addEventListener('click', function(e) {
-		_gaq.push(['_trackEvent', 'social_media', 'twitter']);
-	});
+	document.querySelectorAll('.follow').forEach(item => item.addEventListener('click', function(e) {
+		const ariaLabel = e.currentTarget.getAttribute("aria-label");
+		const social = ariaLabel.substring(ariaLabel.lastIndexOf("to") + 3)
+		_gaq.push(['_trackEvent', 'social_media', social]);
+	}));
 
 	const storeLinks = document.querySelectorAll(".store_links__item");
 	storeLinks.forEach(function(element) {
