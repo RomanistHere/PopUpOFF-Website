@@ -296,6 +296,24 @@ br::selection,
     }
 }
 
+@media screen and (max-height: 670px) {
+    .top__bold {
+        font-size: 70px;
+    }
+
+    .top__text {
+        font-size: 24px;
+    }
+
+    .middle__link.clicked {
+        margin-bottom: 20px;
+    }
+
+    .cont_wr__item p {
+        margin-bottom: 12px;
+    }
+}
+
 @media screen and (max-width:1023px) {
     .follow__icon{
         margin-bottom: 50px;

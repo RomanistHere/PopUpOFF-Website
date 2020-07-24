@@ -17,8 +17,8 @@ if (curScreenWeidth > 1023) {
 	window.addEventListener('resize', setHeights);
 
 	const dom_observer = new MutationObserver(setHeights);
-	dom_observer.observe(document.documentElement, { 
-		childList: true, 
+	dom_observer.observe(document.documentElement, {
+		childList: true,
 		subtree: true,
 		characterData: true
 	});
@@ -104,9 +104,17 @@ if (curScreenWeidth > 1023) {
 	    	const storeData = this.getAttribute("data-link");
 	        _gaq.push(['_trackEvent', 'open_store', storeData]);
 	    });
-	});	
+	});
 
 	document.querySelector('.closeVideo').addEventListener('click', closeVideo);
+
+	const allLinks = document.querySelectorAll("a");
+	allLinks.forEach(function(element) {
+	    element.addEventListener("click", function(e) {
+	    	const data = this.getAttribute("href");
+	        _gaq.push(['_trackEvent', 'link_pressed', data]);
+	    });
+	});
 
 	const url = window.location.href;
 
@@ -125,10 +133,10 @@ if (curScreenWeidth > 1023) {
 			$greeting.classList.add('greeting-hid');
 		}, 10000);
 	}
-	
+
 	messToConsole();
 } else {
-	// mobiles 
+	// mobiles
 	const $triggerLink = document.querySelectorAll(".middle__link");
 
 	$triggerLink.forEach(function(element) {
