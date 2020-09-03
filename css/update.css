@@ -17,7 +17,10 @@ body {
 .updates__wr {
     position: relative;
 
-    padding-bottom: 50px;
+    padding: 150px 0 50px;
+    min-height: 100vh;
+
+    box-sizing: border-box;
 }
 
 .updates__wr::after {
@@ -34,6 +37,8 @@ body {
 }
 
 .updates__title {
+    position: absolute;
+
     padding: 50px 0 30px;
 
     font-weight: 100;
@@ -67,7 +72,7 @@ body {
 }
 .updates__lang_wr {
     position: fixed;
-    
+
     bottom: 20px;
     right: 20px;
 }
