@@ -28,6 +28,7 @@ if (curScreenWeidth > 1023) {
 	triggerLink.forEach(function(element) {
 	    element.addEventListener("click", function(e) {
 	    	_gaq.push(['_trackEvent', 'section_clicked', e.target.id]);
+            plausible('section_click')
 	    	e.preventDefault();
 	        this.classList.add('clicked');
 	        this.parentNode.classList.toggle('opened');
@@ -103,6 +104,7 @@ if (curScreenWeidth > 1023) {
 	    element.addEventListener("click", function(e) {
 	    	const storeData = this.getAttribute("data-link");
 	        _gaq.push(['_trackEvent', 'open_store', storeData]);
+            plausible('browser_click')
 	    });
 	});
 
@@ -113,6 +115,7 @@ if (curScreenWeidth > 1023) {
 	    element.addEventListener("click", function(e) {
 	    	const data = this.getAttribute("href");
 	        _gaq.push(['_trackEvent', 'link_pressed', data]);
+            plausible('data__' + data.toString())
 	    });
 	});
 
@@ -127,6 +130,8 @@ if (curScreenWeidth > 1023) {
 	if (url.indexOf("greetings") != -1) {
 		const browserStore = url.substring(url.lastIndexOf("greetings") + 10);
 		_gaq.push(['_trackEvent', 'greetings', browserStore ? browserStore : 'unknown']);
+        plausible('new_install')
+        plausible('new_install__' + browserStore.toString())
 		const $greeting = document.querySelector('.greeting')
 		$greeting.classList.add('greeting-vis');
 		setTimeout(function() {
