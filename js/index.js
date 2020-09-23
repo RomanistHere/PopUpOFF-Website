@@ -28,7 +28,8 @@ if (curScreenWeidth > 1023) {
 	triggerLink.forEach(function(element) {
 	    element.addEventListener("click", function(e) {
 	    	_gaq.push(['_trackEvent', 'section_clicked', e.target.id]);
-            plausible('section_click')
+			_paq.push(["trackEvent", "section_clicked", e.target.id]);
+			plausible(e.target.id);
 	    	e.preventDefault();
 	        this.classList.add('clicked');
 	        this.parentNode.classList.toggle('opened');
@@ -47,6 +48,7 @@ if (curScreenWeidth > 1023) {
 	    	document.querySelector('.popUp__text').innerHTML = imgText;
 	        document.querySelector(".popUp").classList.add("show");
 	        _gaq.push(['_trackEvent', 'image_clicked', imgPopUp.src]);
+			plausible('image_clicked');
 	    });
 	});
 
@@ -71,7 +73,6 @@ if (curScreenWeidth > 1023) {
 	        triggerLink.forEach(function(element) {
 	        	element.classList.remove('clicked');
 	        });
-	        _gaq.push(['_trackEvent', 'close_section', 'close_section']);
 	    });
 	});
 
@@ -79,32 +80,29 @@ if (curScreenWeidth > 1023) {
 		e.preventDefault();
 		this.classList.add('hide');
 		document.querySelector('.top-interactive_2').classList.add('show');
-		_gaq.push(['_trackEvent', 'top_hidden_click', '1']);
 	});
 
 	document.querySelector('.top-interactive_2').addEventListener('click', function(e) {
 		e.preventDefault();
 		this.classList.add('hide');
 		document.querySelector('.top__text').classList.add('show');
-		_gaq.push(['_trackEvent', 'top_hidden_click', '2']);
-	});
-
-	document.querySelector('.logo').addEventListener('click', function(e) {
-		_gaq.push(['_trackEvent', 'logo_clicked', 'logo']);
 	});
 
 	document.querySelectorAll('.follow').forEach(item => item.addEventListener('click', function(e) {
 		const ariaLabel = e.currentTarget.getAttribute("aria-label");
 		const social = ariaLabel.substring(ariaLabel.lastIndexOf("to") + 3)
 		_gaq.push(['_trackEvent', 'social_media', social]);
+		_paq.push(['trackEvent', 'social_media', social]);
+		plausible('social_media');
 	}));
 
 	const storeLinks = document.querySelectorAll(".store_links__item");
 	storeLinks.forEach(function(element) {
 	    element.addEventListener("click", function(e) {
 	    	const storeData = this.getAttribute("data-link");
-	        _gaq.push(['_trackEvent', 'open_store', storeData]);
-            plausible('browser_click')
+			_gaq.push(['_trackEvent', 'open_store', storeData]);
+	        _paq.push(['trackEvent', 'open_store', storeData]);
+            plausible('browser_click');
 	    });
 	});
 
@@ -114,7 +112,8 @@ if (curScreenWeidth > 1023) {
 	allLinks.forEach(function(element) {
 	    element.addEventListener("click", function(e) {
 	    	const data = this.getAttribute("href");
-	        _gaq.push(['_trackEvent', 'link_pressed', data]);
+			_gaq.push(['_trackEvent', 'link_pressed', data]);
+	        _paq.push(['trackEvent', 'link_pressed', data]);
 	    });
 	});
 
@@ -129,7 +128,8 @@ if (curScreenWeidth > 1023) {
 	if (url.indexOf("greetings") != -1) {
 		const browserStore = url.substring(url.lastIndexOf("greetings") + 10);
 		_gaq.push(['_trackEvent', 'greetings', browserStore ? browserStore : 'unknown']);
-        plausible('new_install')
+		_paq.push(['trackEvent', 'greetings', browserStore ? browserStore : 'unknown']);
+        plausible(browserStore)
 		const $greeting = document.querySelector('.greeting')
 		$greeting.classList.add('greeting-vis');
 		setTimeout(function() {
