@@ -129,7 +129,7 @@ if (curScreenWeidth > 1023) {
 		const browserStore = url.substring(url.lastIndexOf("greetings") + 10);
 		_gaq.push(['_trackEvent', 'greetings', browserStore ? browserStore : 'unknown']);
 		_paq.push(['trackEvent', 'greetings', browserStore ? browserStore : 'unknown']);
-        plausible(browserStore)
+        plausible('new_install__' + browserStore)
 		const $greeting = document.querySelector('.greeting')
 		$greeting.classList.add('greeting-vis');
 		setTimeout(function() {
