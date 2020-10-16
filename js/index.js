@@ -1,18 +1,5 @@
 let curScreenWeidth = window.screen.width;
 if (curScreenWeidth > 1023) {
-	var _gaq = _gaq || [];
-	_gaq.push(['_setAccount', 'UA-138501898-2']);
-	_gaq.push(['_trackPageview']);
-
-	(function() {
-	  var ga = document.createElement('script');
-	  ga.type = 'text/javascript';
-	  ga.async = true;
-	  ga.src = 'https://ssl.google-analytics.com/ga.js';
-	  var s = document.getElementsByTagName('script')[0];
-	  s.parentNode.insertBefore(ga, s);
-	})();
-
 	setHeights();
 	window.addEventListener('resize', setHeights);
 
@@ -27,9 +14,6 @@ if (curScreenWeidth > 1023) {
 
 	triggerLink.forEach(function(element) {
 	    element.addEventListener("click", function(e) {
-	    	_gaq.push(['_trackEvent', 'section_clicked', e.target.id]);
-			_paq.push(["trackEvent", "section_clicked", e.target.id]);
-			plausible(e.target.id);
 	    	e.preventDefault();
 	        this.classList.add('clicked');
 	        this.parentNode.classList.toggle('opened');
@@ -47,8 +31,6 @@ if (curScreenWeidth > 1023) {
 	    	const imgText = e.target.getAttribute('data-desc');
 	    	document.querySelector('.popUp__text').innerHTML = imgText;
 	        document.querySelector(".popUp").classList.add("show");
-	        _gaq.push(['_trackEvent', 'image_clicked', imgPopUp.src]);
-			plausible('image_clicked');
 	    });
 	});
 
@@ -88,34 +70,7 @@ if (curScreenWeidth > 1023) {
 		document.querySelector('.top__text').classList.add('show');
 	});
 
-	document.querySelectorAll('.follow').forEach(item => item.addEventListener('click', function(e) {
-		const ariaLabel = e.currentTarget.getAttribute("aria-label");
-		const social = ariaLabel.substring(ariaLabel.lastIndexOf("to") + 3)
-		_gaq.push(['_trackEvent', 'social_media', social]);
-		_paq.push(['trackEvent', 'social_media', social]);
-		plausible('social_media');
-	}));
-
-	const storeLinks = document.querySelectorAll(".store_links__item");
-	storeLinks.forEach(function(element) {
-	    element.addEventListener("click", function(e) {
-	    	const storeData = this.getAttribute("data-link");
-			_gaq.push(['_trackEvent', 'open_store', storeData]);
-	        _paq.push(['trackEvent', 'open_store', storeData]);
-            plausible('browser_click');
-	    });
-	});
-
 	document.querySelector('.closeVideo').addEventListener('click', closeVideo);
-
-	const allLinks = document.querySelectorAll("a");
-	allLinks.forEach(function(element) {
-	    element.addEventListener("click", function(e) {
-	    	const data = this.getAttribute("href");
-			_gaq.push(['_trackEvent', 'link_pressed', data]);
-	        _paq.push(['trackEvent', 'link_pressed', data]);
-	    });
-	});
 
 	const url = window.location.href;
 
@@ -126,10 +81,6 @@ if (curScreenWeidth > 1023) {
 	}
 
 	if (url.indexOf("greetings") != -1) {
-		const browserStore = url.substring(url.lastIndexOf("greetings") + 10);
-		_gaq.push(['_trackEvent', 'greetings', browserStore ? browserStore : 'unknown']);
-		_paq.push(['trackEvent', 'greetings', browserStore ? browserStore : 'unknown']);
-        plausible('new_install__' + browserStore)
 		const $greeting = document.querySelector('.greeting')
 		$greeting.classList.add('greeting-vis');
 		setTimeout(function() {
