@@ -1,9 +1,13 @@
 const closeVideo = () => {
 	const videoSRC = document.querySelector('.middle__video').getAttribute('src');
-	document.querySelector('.middle__video').setAttribute('src', videoSRC);				
+	document.querySelector('.middle__video').setAttribute('src', videoSRC);
+}
+const initVideo = () => {
+	const video = document.querySelector('iframe');
+	video.setAttribute('src', video.getAttribute('data-src'))
 }
 const setHeights = () => {
-	const middleWrap = document.querySelectorAll(".middle__wrap:not(.middle__img_wr)");
+	const middleWrap = document.querySelectorAll(".middle__wrap");
 	middleWrap.forEach((element) => {
 		let sumOfChildsHeights = 0;
 		for (let i = 0; i < element.children.length; i++) {
@@ -11,9 +15,9 @@ const setHeights = () => {
 		}
 		element.style.height = sumOfChildsHeights + 'px';
 	});
-	let middleImgWrap = document.querySelector(".middle__img_wr");
-	const sumOfChildsHeights = middleImgWrap.children[0].children[0].offsetHeight;
-	middleImgWrap.style.height = sumOfChildsHeights + 'px';
+	// let middleImgWrap = document.querySelector(".middle__img_wr");
+	// const sumOfChildsHeights = middleImgWrap.children[0].offsetHeight;
+	// middleImgWrap.style.height = sumOfChildsHeights + 'px';
 }
 const messToConsole = () => {
 	console.log('%c Hi there!', 'color: #efbb35');
