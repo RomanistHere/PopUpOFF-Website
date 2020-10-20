@@ -15,6 +15,10 @@ if (curScreenWeidth > 1023) {
 	triggerLink.forEach(function(element) {
 	    element.addEventListener("click", function(e) {
 	    	e.preventDefault();
+			
+			if (this.id === 'video')
+				initVideo();
+
 	        this.classList.add('clicked');
 	        this.parentNode.classList.toggle('opened');
 	        this.parentNode.parentNode.classList.toggle('condition');
@@ -106,15 +110,10 @@ if (curScreenWeidth > 1023) {
 	document.querySelector('.top__bold').addEventListener("click", function(e) {
     	e.preventDefault();
     });
+
+	initVideo();
 }
 setOptHandler();
 // temporarily version of responsive
 let oldScreenWidth = curScreenWeidth;
 window.addEventListener('resize', checkWidth);
-
-const initVideo = () => {
-	const video = document.querySelector('iframe');
-	video.setAttribute('src', video.getAttribute('data-src'))
-}
-
-initVideo();
