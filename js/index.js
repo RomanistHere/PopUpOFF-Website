@@ -1,5 +1,18 @@
 let curScreenWeidth = window.screen.width;
 if (curScreenWeidth > 1023) {
+	const url = window.location.href;
+	if (url.indexOf("2.0") != -1) {
+		// 2.0 text
+		// show new elements
+		document.querySelectorAll('.upd-hide').forEach(element => {
+			element.classList.remove('upd-hide')
+		});
+		// remove old elements
+		document.querySelectorAll('.upd').forEach(element => {
+			element.classList.add('upd-hide')
+		});
+	}
+
 	setHeights();
 	window.addEventListener('resize', setHeights);
 
@@ -15,7 +28,7 @@ if (curScreenWeidth > 1023) {
 	triggerLink.forEach(function(element) {
 	    element.addEventListener("click", function(e) {
 	    	e.preventDefault();
-			
+
 			if (this.id === 'video')
 				initVideo();
 
@@ -75,8 +88,6 @@ if (curScreenWeidth > 1023) {
 	});
 
 	document.querySelector('.closeVideo').addEventListener('click', closeVideo);
-
-	const url = window.location.href;
 
 	if (url.indexOf("how_to_use") != -1) {
 		document.querySelector('.middle__item:nth-child(3) .middle__link').classList.add('clicked');
