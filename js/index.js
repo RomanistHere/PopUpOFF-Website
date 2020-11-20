@@ -11,6 +11,9 @@ if (curScreenWeidth > 1023) {
 		document.querySelectorAll('.upd').forEach(element => {
 			element.classList.add('upd-hide')
 		});
+
+		const video = document.querySelector('iframe')
+		video.setAttribute('data-src', 'https://www.youtube-nocookie.com/embed/3jTKRCxLyPE')
 	}
 
 	setHeights();
