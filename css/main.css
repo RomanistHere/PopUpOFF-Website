@@ -217,6 +217,14 @@
     opacity: 0;
 }
 
+.upd-hide {
+    display: none;
+}
+
+.upd-show {
+    display: block;
+}
+
 @media screen and (max-width:1601px) {
     .top__text {
         padding-bottom: 20px

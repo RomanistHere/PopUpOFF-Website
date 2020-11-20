@@ -15,6 +15,9 @@ const setHeights = () => {
 		}
 		element.style.height = sumOfChildsHeights + 'px';
 	});
+	// let middleImgWrap = document.querySelector(".middle__img_wr");
+	// const sumOfChildsHeights = middleImgWrap.children[0].offsetHeight;
+	// middleImgWrap.style.height = sumOfChildsHeights + 'px';
 }
 const messToConsole = () => {
 	console.log('%c Hi there!', 'color: #efbb35');
