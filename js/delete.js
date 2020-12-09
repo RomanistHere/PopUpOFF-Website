@@ -1,6 +1,7 @@
 const form = document.querySelector('.form')
 const inputs = document.querySelectorAll('.form__inp')
 const textArea = document.querySelector('.form__area')
+const popup = document.querySelector('.popup_overlay')
 
 const handleErrors = (response) => {
     if (!response.ok) {
@@ -24,8 +25,6 @@ form.addEventListener('submit', e => {
         comment: textArea.value
     }
 
-    console.log(send)
-
     fetch('https://romanisthere.com:3000/quiz', {
         method: "POST",
         body: JSON.stringify(send),
@@ -36,6 +35,7 @@ form.addEventListener('submit', e => {
     }).then(handleErrors)
     .then(response => {
         form.reset()
+        popup.classList.add('popup_overlay-show')
     })
     .catch(error => {
         console.log(error)

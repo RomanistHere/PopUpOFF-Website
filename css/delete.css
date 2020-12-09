@@ -62,3 +62,68 @@ html, body {
 .form__btn:hover {
     color: var(--yel-col);
 }
+
+.link {
+    display: inline-block;
+
+    text-decoration: underline;
+}
+
+.popup {
+    position: fixed;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 80px 100px;
+    width: 500px;
+    border-radius: 40px;
+
+    background-color: var(--dark-col);
+    border: 15px solid var(--yel-col);
+
+    font-size: 26px;
+    font-weight: normal;
+}
+
+.popup_overlay {
+    position: fixed;
+    display: none;
+
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    backdrop-filter: blur(5px);
+}
+
+.popup_overlay-show {
+    display: block;
+
+    animation: appearing .5s ease;
+}
+
+@keyframes appearing {
+    0% {
+        opacity: 0;
+    },
+    100% {
+        opacity: 1;
+    }
+}
+
+@media screen and (max-height: 650px) {
+    html,
+    body {
+        font-size: 16px;
+    }
+
+    .text__content {
+        margin: 20px;
+    }
+
+    .text__header {
+        margin-bottom: 20px;
+    }
+}
