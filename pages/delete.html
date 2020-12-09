@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="Description" content="Non-comercial and open-source browser extension. Removes popups, overlays, cookie and 'please, disable adBlock' notifications.">
+
+	<meta property="og:title" content="PopUpOFF - Free browser extension that eliminates all sorts of overlays." />
+	<meta property="og:type" content="product" />
+	<meta property="og:image" content="../images/logofull.png" />
+	<meta property="og:url" content="https://romanisthere.github.io/PopUpOFF-Website/index.html" />
+	<meta property="og:description" content="Non-comercial and open-source browser extension. Removes popups, overlays, cookie and 'please, disable adBlock' notifications. I made it for myself. Enjoy the original look of the internet."/>
+
+	<link rel="shortcut icon" type="image/png" href="../logo32.png"/>
+
+	<link rel="stylesheet" href="../css/base.css">
+	<link rel="stylesheet" href="../css/main.css">
+	<link rel="stylesheet" href="../css/main-non-crit.css" media="print" onload="this.media='all'">
+	<link rel="stylesheet" href="../css/delete.css">
+
+	<script defer src="../js/delete.js"></script>
+
+	<title>Thank you for using PopUpOFF.</title>
+</head>
+<body>
+	<section class="quiz">
+		<header class="text">
+			<h1 class="text__header">
+				Thank you for using my extension!
+			</h1>
+			<div class="text__content">
+				While you were using PopUpOFF, you’ve been making the world of the web a little bit better. I appreciate you gave it a try. If I wanted to make the extension better, what would I need to focus on from your point of view?
+			</div>
+		</header>
+
+		<form class="form" method="post" action="http://localhost:3000/contact">
+			<div class="form__grp">
+				<input class="form__inp" type="checkbox" id="option1" name="option1" value="Design">
+				<label class="form__label" for="option1">I don't like how PopUpOFF looks</label>
+			</div>
+			<div class="form__grp">
+				<input class="form__inp" type="checkbox" id="option2" name="option2" value="Should_block">
+				<label class="form__label" for="option2">It doesn't block where it should</label>
+			</div>
+			<div class="form__grp">
+				<input class="form__inp" type="checkbox" id="option3" name="option3" value="Should_not_block">
+				<label class="form__label" for="option3">It blocks where it shouldn't</label>
+			</div>
+			<div class="form__grp">
+				<input class="form__inp" type="checkbox" id="option4" name="option4" value="Last_update">
+				<label class="form__label" for="option4">I didn't like the last update</label>
+			</div>
+			<div class="form__grp">
+				<input class="form__inp" type="checkbox" id="option5" name="option5" value="Do_not_understand">
+				<label class="form__label" for="option5">I don't understand how it works</label>
+			</div>
+			<div class="form__grp">
+				<input class="form__inp" type="checkbox" id="option6" name="option6" value="Should_not_block">
+				<label class="form__label" for="option6">It doesn't work (errors, freezes, etc)</label>
+			</div>
+			<div class="form__grp">
+				<textarea class="form__area" name="clarification" placeholder="Provide more details here..."></textarea>
+			</div>
+			<button class="form__btn">Submit</button>
+		</form>
+	</section>
+
+	<div class="popup_overlay">
+		<div class="popup">
+			Thank you, I will improve it shortly. Better start to get used to popups everywhere.
+			</br></br>
+			Follow updates on the other projects of mine:
+			<a
+				href="https://twitter.com/RomanistHere"
+				target="_blank"
+				title="Follow the news in Twitter"
+				aria-label="link to Twitter"
+				rel="noreferrer"
+				class="link">Twitter</a>,
+			<a
+				href="https://t.me/BetterWebNews"
+				target="_blank"
+				title="Follow the news in Telegram"
+				aria-label="link to Telegram"
+				rel="noreferrer"
+				class="link">Telegram</a>
+		</div>
+	</div>
+</body>
+</html>
