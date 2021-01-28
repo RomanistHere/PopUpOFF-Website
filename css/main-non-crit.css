@@ -247,11 +247,11 @@ br::selection,
     left: 57px;
 }
 
-.store_links__logo{
+/* .store_links__logo{
     -webkit-transition: all ease .3s .1s;
     -o-transition: all ease .3s .1s;
     transition: all ease .3s .1s;
-}
+} */
 
 .store_links:hover .store_links__logo{
     filter: blur(1px);
