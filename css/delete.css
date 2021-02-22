@@ -63,6 +63,18 @@ html, body {
     color: var(--yel-col);
 }
 
+.form__desc {
+    padding-top: 10px;
+
+    font-size: 18px;
+}
+
+.form__link {
+    display: inline-block;
+
+    text-decoration: underline;
+}
+
 .link {
     display: inline-block;
 
